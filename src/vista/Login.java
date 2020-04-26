@@ -150,7 +150,7 @@ public class Login extends javax.swing.JFrame {
      */
     public static String generateRandomText() {
         SecureRandom random = new SecureRandom();
-        String text = new BigInteger(130, random).toString(32);
+        String text = new BigInteger(50, random).toString(32);
         return text;  
     }
     
@@ -194,10 +194,10 @@ public class Login extends javax.swing.JFrame {
         /* Create and display the form */
         
         
-        LinkedQueue k = new LinkedQueue();
-        System.out.println(generateRandomText());
+        LinkedQueue k = new LinkedQueue();        
         k.enQueue("ccpabonu", "1234");
-        k.enQueue("cpu", "123"); 
+        k.enQueue("cpu", "123");
+        for (int i=0;i<1000;i++) k.enQueue(generateRandomText(), generateRandomText());
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
