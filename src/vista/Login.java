@@ -197,8 +197,11 @@ public class Login extends javax.swing.JFrame {
         LinkedQueue k = new LinkedQueue();        
         k.enQueue("ccpabonu", "1234");
         k.enQueue("cpu", "123");
+        long TInicio, TFin;
+        TInicio = System.currentTimeMillis();
         for (int i=0;i<1000;i++) k.enQueue(generateRandomText(), generateRandomText());
-        
+        TFin = System.currentTimeMillis();
+        System.out.println(TFin-TInicio);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login(k).setVisible(true);
