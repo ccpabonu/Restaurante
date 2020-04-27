@@ -6,19 +6,19 @@
 package modelo;
 import java.util.*;
 
-class ChainNode {
-    String user;
-    String pass;
+class ChainNode<T> {
+    T user;
+    T pass;
     ChainNode next;
     
     public ChainNode(){
         this(null,null,null);
     }
-    public ChainNode (String user1,String pass1){
+    public ChainNode (T user1,T pass1){
         this(user1,pass1,null);
     }
     
-    public ChainNode (String user1,String pass1, ChainNode next){
+    public ChainNode (T user1,T pass1, ChainNode next){
         this.user = user1 ;
         this.pass = pass1;
         this.next = next;
