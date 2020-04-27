@@ -1,0 +1,42 @@
+[33mcommit b7deef641451eb5ea21dedafd0369fcc071b1e82[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Christian Pabon <ccpabonu@unal.edu.co>
+Date:   Sun Apr 26 19:19:19 2020 -0500
+
+    se cambia linkedqueue a tipo generico y se agregan funciones a linkedqueue
+
+[33mcommit 7016d9d4b66a6a60c2ef8cac40ef5df170ce19d2[m
+Author: ccpabonu <64380694+ccpabonu@users.noreply.github.com>
+Date:   Sun Apr 26 16:32:10 2020 -0500
+
+    grupo 1
+
+[33mcommit 7d42dce3e8f05a575c09574b292d249189ba0003[m
+Merge: 24bbd34 a7bd781
+Author: Christian Pabon <ccpabonu@unal.edu.co>
+Date:   Sun Apr 26 16:17:30 2020 -0500
+
+    Merge branch 'master' of https://github.com/ccpabonu/Restaurante
+
+[33mcommit a7bd781e4dd4eadc597bebb06f7b8f16c7e411e2[m
+Author: ccpabonu <64380694+ccpabonu@users.noreply.github.com>
+Date:   Sun Apr 26 16:05:09 2020 -0500
+
+    Initial commit
+
+[33mcommit 24bbd346314188e7da536dd1c655da6940292426[m
+Author: Christian Pabon <ccpabonu@unal.edu.co>
+Date:   Sat Apr 25 22:17:39 2020 -0500
+
+    tiempo de ejecucion del enqueue
+
+[33mcommit 1a306828c8cf5e06ed73afa8c8f8aad9996a904e[m
+Author: Christian Pabon <ccpabonu@unal.edu.co>
+Date:   Sat Apr 25 21:25:26 2020 -0500
+
+    agregar 1000 usuarios
+
+[33mcommit fc989aabbf8fb18cd092482e734e027a0f9306ff[m
+Author: Christian Pabon <ccpabonu@unal.edu.co>
+Date:   Sat Apr 25 19:34:33 2020 -0500
+
+    Se adiciono funciones random int,string,double

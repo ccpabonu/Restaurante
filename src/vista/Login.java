@@ -194,19 +194,31 @@ public class Login extends javax.swing.JFrame {
         /* Create and display the form */
         
         
-        LinkedQueue k = new LinkedQueue();        
-        k.enQueue("ccpabonu", "1234");
-        k.enQueue("cpu", "123");
-        k.cambiarcontraseña("cpu", "789");
-        System.out.println(k.getRearElement());
-        /*long TInicio, TFin;
+        LinkedQueue usuarios = new LinkedQueue();  //Crar la linkedlist de los usuarios que pueden acceder   
+        usuarios.enQueue("ccpabonu", "1234");      //datos prueba
+        usuarios.enQueue("cpu", "123");
+        usuarios.cambiarcontraseña("cpu", "789");
+        System.out.println(usuarios.toString());
+        long TInicio, TFin;
         TInicio = System.currentTimeMillis();
-        for (int i=0;i<1000;i++) k.enQueue(generateRandomText(), generateRandomText());
+        int n=1000000;                                 //numero de datos random a ingresar
+        for (int i=0;i<n;i++) usuarios.enQueue(generateRandomText(), generateRandomText());  //enqueue de los n datos random
         TFin = System.currentTimeMillis();
-        System.out.println(TFin-TInicio);*/
+        System.out.println(TFin-TInicio);
+        usuarios.enQueue("demolinar", "1234");
+        System.out.println("compara");
+        TInicio = System.currentTimeMillis();
+        System.out.println(usuarios.comparar("cpu", "789"));
+        TFin = System.currentTimeMillis();
+        System.out.println(TFin-TInicio);
+        System.out.println(usuarios.getRearElement());
+                
+        
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login(k).setVisible(true);
+                new Login(usuarios).setVisible(true);
             }
         });
     }

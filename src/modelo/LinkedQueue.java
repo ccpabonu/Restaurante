@@ -35,7 +35,7 @@ public class LinkedQueue<T> implements Queue<T>{
 
     @Override
     public T getRearElement() {
-        return isEmpty() ? null : rear.pass; 
+        return isEmpty() ? null : rear.user; 
     }
     
     @Override
@@ -79,14 +79,17 @@ public class LinkedQueue<T> implements Queue<T>{
     }
     @Override
     public String toString(){
-        String g="";
+        StringBuilder g = new StringBuilder();
         ChainNode q;
         q=front;
-        g=Objects.toString(front.user)+"--"+Objects.toString(front.pass)+", ";
-        front=front.next;       
+        while(q!=null){
+            g.append(Objects.toString(q.user)+"--"+Objects.toString(q.pass)+", "); 
+            q=q.next;
+        }
+        g.setLength( g.length( ) - 2 );
         
         
-        return"";
+        return new String (g);
     }
     
     
