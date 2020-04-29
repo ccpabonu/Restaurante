@@ -197,21 +197,7 @@ public class Login extends javax.swing.JFrame {
         LinkedQueue usuarios = new LinkedQueue();  //Crar la linkedlist de los usuarios que pueden acceder   
         usuarios.enQueue("ccpabonu", "1234");      //datos prueba
         usuarios.enQueue("cpu", "123");
-        usuarios.cambiarcontraseña("cpu", "789");
-        System.out.println(usuarios.toString());
-        long TInicio, TFin;
-        TInicio = System.currentTimeMillis();
-        int n=1000000;                                 //numero de datos random a ingresar
-        for (int i=0;i<n;i++) usuarios.enQueue(generateRandomText(), generateRandomText());  //enqueue de los n datos random
-        TFin = System.currentTimeMillis();
-        System.out.println(TFin-TInicio);
-        usuarios.enQueue("demolinar", "1234");
-        System.out.println("compara");
-        TInicio = System.currentTimeMillis();
-        System.out.println(usuarios.comparar("cpu", "789"));
-        TFin = System.currentTimeMillis();
-        System.out.println(TFin-TInicio);
-        System.out.println(usuarios.getRearElement());
+        usuarios.cambiarcontraseña("cpu", "789");    
                 
         
         
