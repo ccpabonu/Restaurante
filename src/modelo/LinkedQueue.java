@@ -65,18 +65,17 @@ public class LinkedQueue<T> implements Queue<T>{
         }
         return false;      
     }
-    public void cambiarcontraseña (T user1, T pass1){
-        
+    public void cambiarcontraseña ( T user1, T pass1){        
         if (front.user.equals(user1))front.pass=pass1 ;
         else  cambiarcontraseña(front.next, user1,pass1);                       
     }
-    public void cambiarcontraseña (ChainNode s,T user1, T pass1){
+    public void cambiarcontraseña ( ChainNode s,T user1, T pass1){
         if(s!=null){
             if (s.user.equals(user1))s.pass=pass1 ;
             else  cambiarcontraseña(s.next, user1,pass1);
-        }   
-                      
+        }                     
     }
+    
     @Override
     public String toString(){
         StringBuilder g = new StringBuilder();
@@ -86,9 +85,7 @@ public class LinkedQueue<T> implements Queue<T>{
             g.append(Objects.toString(q.user)+"--"+Objects.toString(q.pass)+", "); 
             q=q.next;
         }
-        g.setLength( g.length( ) - 2 );
-        
-        
+        g.setLength( g.length( ) - 2 );       
         return new String (g);
     }
     
