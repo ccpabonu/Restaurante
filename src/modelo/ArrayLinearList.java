@@ -128,6 +128,21 @@ public class ArrayLinearList<T> implements LinearList<T>, Iterable<T>
       element[ index ] = theElement;
       size++;
    }
+   
+      public void add( T theElement )
+   {
+      // valid index, make sure we have space
+      if( size == element.length )
+      {
+         // no space, double capacity
+         T[] old = element;
+         element = ( T[] ) new Object[ size*2 ];
+         System.arraycopy( old, 0, element, 0, size );
+          
+      }
+      element[size] = theElement;
+      size++;
+   }
 
    /** convert to a string */
    @Override

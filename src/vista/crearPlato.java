@@ -5,12 +5,12 @@
  */
 package vista;
 
-import modelo.DList;
 import modelo.Plato;
 import modelo.Producto;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import modelo.ArrayLinearList;
 import static vista.Menu.contenedor;
 
 
@@ -26,7 +26,7 @@ public final class crearPlato extends javax.swing.JPanel {
      */
 
     
-    public void IngredientesCB( DList<Producto> ingredientes ){
+    public void IngredientesCB( ArrayLinearList <Producto> ingredientes){
         Ingrediente1.addItem("Nulo");
         Ingrediente2.addItem("Nulo");
         Ingrediente3.addItem("Nulo");
@@ -37,7 +37,7 @@ public final class crearPlato extends javax.swing.JPanel {
         Ingrediente8.addItem("Nulo");
         Ingrediente9.addItem("Nulo");
         Ingrediente10.addItem("Nulo"); 
-        for(int i=0;i<ingredientes.size;i++){
+        for(int i=0;i<ingredientes.size();i++){
             Ingrediente1.addItem(ingredientes.get(i).getNombre());
             Ingrediente2.addItem(ingredientes.get(i).getNombre());
             Ingrediente3.addItem(ingredientes.get(i).getNombre());
@@ -63,7 +63,7 @@ public final class crearPlato extends javax.swing.JPanel {
     
     public crearPlato() {
         initComponents();
-        IngredientesCB(Menu.ingredientes);
+        IngredientesCB(Almacen.bodega);
     }
 
     /**
@@ -570,16 +570,16 @@ public final class crearPlato extends javax.swing.JPanel {
         Producto I8=new Producto();
         Producto I9=new Producto();
         Producto I10=new Producto();
-        I1=I1.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
-        I2=I2.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
-        I3=I3.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
-        I4=I4.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
-        I5=I5.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
-        I6=I6.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
-        I7=I7.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
-        I8=I8.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
-        I9=I9.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
-        I10=I10.Buscar(Ingrediente1.getSelectedItem().toString(), Menu.ingredientes);
+        I1=I1.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
+        I2=I2.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
+        I3=I3.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
+        I4=I4.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
+        I5=I5.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
+        I6=I6.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
+        I7=I7.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
+        I8=I8.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
+        I9=I9.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
+        I10=I10.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
 
         double C1=getValue(Cantidad1);
         double C2=getValue(Cantidad2);

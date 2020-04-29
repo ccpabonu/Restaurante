@@ -5,7 +5,6 @@
  */
 package vista;
 
-import modelo.DList;
 import modelo.Plato;
 import modelo.Producto;
 import java.awt.BorderLayout;
@@ -14,6 +13,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import modelo.ArrayLinearList;
 
 /**
  *
@@ -24,22 +24,17 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    Producto arroz=new Producto("Arroz",123,1563);//ejemplo
-    Producto frijoles=new Producto("frijoles",8956,12325);//ejemplo
-    Producto carne=new Producto("carne",15632,8569);//ejemplo
+ 
     Fondo fondo=new Fondo();
     
-    public static DList <Producto> ingredientes=new DList();//Son los datos que van a venir de bodega
-    public static DList <Plato> menu =new DList();// arreglo donde se van a guardar los datos de los platos
+    
+    public static ArrayLinearList <Plato> menu =new ArrayLinearList();// arreglo donde se van a guardar los datos de los platos
     
     
     public Menu() {
     this.setContentPane(fondo);
     initComponents();
     this.setLocationRelativeTo(null);
-    ingredientes.add(arroz);//ejemplo
-    ingredientes.add(frijoles);//ejemplo
-    ingredientes.add(carne);//ejemplo
     MenuPrincipal ppal=new MenuPrincipal();
     ppal.setSize(600,600);
     ppal.setLocation(50,0);
@@ -121,6 +116,8 @@ public class Menu extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

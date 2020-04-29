@@ -6,11 +6,11 @@
 package vista;
 
 import static vista.Menu.contenedor;
-import modelo.DList;
 import modelo.Plato;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.ArrayLinearList;
 
 /**
  *
@@ -119,13 +119,13 @@ public class Mostrar extends javax.swing.JPanel {
         
         }
     }
-    private void llenarTabla(DList<Plato> menu){
+    private void llenarTabla(ArrayLinearList <Plato> menu){
         if(menu==null){
             JOptionPane.showMessageDialog(null,"No hay contactos");
         }
         else{     
            Object o[]=null;
-           for(int i=0;i < menu.size;i++){
+           for(int i=0;i < menu.size();i++){
                Plato plato = menu.get(i);
                ver.addRow(o);
                ver.setValueAt(Integer.toString(i+1), i, 0);

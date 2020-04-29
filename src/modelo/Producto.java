@@ -44,15 +44,15 @@ public class Producto {
     }
 
     public Producto() {
+        
     }
     
-    
-    
-    public Producto Buscar(String nombre, DList<Producto> ingredientes){
+       
+    public Producto Buscar(String nombre, ArrayLinearList <Producto> ingredientes){
         if(nombre.equals("Nulo")){
             return null;
         }else{
-            for(int i =0;i<ingredientes.length();i++){
+            for(int i =0;i<ingredientes.size();i++){
                 if(nombre.equals(ingredientes.get(i).getNombre())){
                     return ingredientes.get(i);
                 }
@@ -61,8 +61,6 @@ public class Producto {
             
          }  
         return null;
-    }
-    
-    
+    }   
     
     }
