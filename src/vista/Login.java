@@ -82,6 +82,11 @@ public class Login extends javax.swing.JFrame {
                 jButtonLoginActionPerformed(evt);
             }
         });
+        jButtonLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButtonLoginKeyPressed(evt);
+            }
+        });
         getContentPane().add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 100, 30));
 
         jLabelUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/User.png"))); // NOI18N
@@ -121,6 +126,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jLabelFondo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabelFondoKeyPressed(evt);
+            }
+        });
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 340));
 
         pack();
@@ -145,26 +155,18 @@ public class Login extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
+    private void jLabelFondoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabelFondoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelFondoKeyPressed
+
+    private void jButtonLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonLoginKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonLoginKeyPressed
+
     /**
      * @param args the command line arguments
      */
-    public static String generateRandomText() {
-        SecureRandom random = new SecureRandom();
-        String text = new BigInteger(50, random).toString(32);
-        return text;  
-    }
     
-    public static int generateRandomInt() {
-        int num;
-        num = (int) (Math.random() * 100000) + 1;
-        return num;  
-    }
-    
-    public static double generateRandomDouble() {
-        double num;
-        num = (Math.random() * 100000) + 1;
-        return num;  
-    }
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

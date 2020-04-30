@@ -5,7 +5,9 @@
  */
 package modelo;
 
-import static vista.Login.generateRandomText;
+import java.math.BigInteger;
+import java.security.SecureRandom;
+
 
 /**
  *
@@ -13,27 +15,33 @@ import static vista.Login.generateRandomText;
  */
 public class testEstructuras {
 
-    /**
-     * @param args the command line arguments
-     */
+    public static String generateRandomText() {
+        SecureRandom random = new SecureRandom();
+        String text = new BigInteger(50, random).toString(32);
+        return text;  
+    }
+    
+    public static int generateRandomInt() {
+        int num;
+        num = (int) (Math.random() * 100000) + 1;
+        return num;  
+    }
+    
+    public static double generateRandomDouble() {
+        double num;
+        num = (Math.random() * 100000) + 1;
+        return num;  
+    }
     public static void main(String[] args) {
         LinkedQueue usuarios = new LinkedQueue();
         long TInicio, TFin,TInicio1, TFin1;
         TInicio = System.currentTimeMillis();
-        int n=100000;                      //numero de datos random a ingresar
-        System.out.println("añade");
-        usuarios.enQueue("ccpabonu", "1234");
+        int n=10000000;                      //numero de datos random a ingresar
+        System.out.println("añade");        
         for (int i=0;i<n;i++) usuarios.enQueue(generateRandomText(), generateRandomText());  //enqueue de los n datos random
         TFin = System.currentTimeMillis();
         System.out.println(TFin-TInicio);
-        usuarios.enQueue("demolinar", "1234"); //ultimo elemento en la cola
-        System.out.println("compara");
-        usuarios.cambiarcontraseña("demolinar", "1");
-        TInicio1 = System.currentTimeMillis();
-        System.out.println(usuarios.comparar("demolinar", "1234"));
-        TFin1 = System.currentTimeMillis();
-        System.out.println(TFin1-TInicio1);
-        //System.out.println(usuarios.toString());
+        
         
     }
     
