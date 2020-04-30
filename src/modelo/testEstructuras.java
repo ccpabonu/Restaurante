@@ -34,15 +34,23 @@ public class testEstructuras {
     }
     public static void main(String[] args) {
         LinkedQueue usuarios = new LinkedQueue();
-        long TInicio, TFin,TInicio1, TFin1;
-        TInicio = System.currentTimeMillis();
         int n=10000000;                      //numero de datos random a ingresar
+        String[ ] users = new String[n];
+        String[ ] pass = new String[n];
+        for (int i=0;i<n;i++) {users[i]=generateRandomText();pass[i]=generateRandomText();} //guardar datos random en un arreglo de strings
+        long TInicio, TFin,TInicio1, TFin1;
+        TInicio = System.currentTimeMillis();        
         System.out.println("añade");        
-        for (int i=0;i<n;i++) usuarios.enQueue(generateRandomText(), generateRandomText());  //enqueue de los n datos random
+        for (int i=0;i<n;i++) usuarios.enQueue(users[i], pass[i]);  //enqueue de los n datos random
         TFin = System.currentTimeMillis();
         System.out.println(TFin-TInicio);
-        
-        
+        usuarios.enQueue("ccpabonu", "1234");
+        usuarios.enQueue("cpu", "123");
+        TInicio = System.currentTimeMillis();        
+        System.out.println("busca");        
+        System.out.println(usuarios.comparar("cpu", "jjj"));  //enqueue de los n datos random
+        TFin = System.currentTimeMillis();
+        System.out.println(TFin-TInicio);
     }
     
 }
