@@ -51,6 +51,7 @@ public class testEstructuras {
         System.out.println(usuarios.comparar("cpu", "jjj"));  //enqueue de los n datos random
         TFin = System.currentTimeMillis();
         System.out.println(TFin-TInicio);
+        System.out.println(TFin-TInicio);
     }
     
 }
