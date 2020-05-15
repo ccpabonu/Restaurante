@@ -183,9 +183,9 @@ public class ArrayLinearList<T> implements LinearList<T>, Iterable<T>
       
          if(i<size && i>=0){
             element[i]=elemento;
-        }
+        }        
         
-        }
+        }   
 
     
    }

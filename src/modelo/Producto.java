@@ -22,7 +22,7 @@ public class Producto {
         this.nombre = nombre;
     }
     
-    public double getCantidad(){
+    public int getCantidad(){
         return cantidad;
     }
     

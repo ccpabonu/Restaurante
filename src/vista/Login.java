@@ -199,7 +199,10 @@ public class Login extends javax.swing.JFrame {
         LinkedQueue usuarios = new LinkedQueue();  //Crar la linkedlist de los usuarios que pueden acceder   
         usuarios.enQueue("ccpabonu", "1234");      //datos prueba
         usuarios.enQueue("cpu", "123");
-        usuarios.cambiarcontraseña("cpu", "789");    
+        //System.out.println(usuarios.getFrontElement());
+        
+        //usuarios.cambiarcontraseña("ccpabonu", "789");
+        //System.out.println(usuarios.getFrontElement());
                 
         
         

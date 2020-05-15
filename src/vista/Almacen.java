@@ -240,7 +240,7 @@ public int buscar;
         String precio=txPrecio.getText();
         
         Producto pro1=new Producto (nombre,Integer.parseInt(cantidad),Double.parseDouble(precio));
-       bodega.set(pro1,buscar );
+       bodega.set(pro1,buscar);
        txNombre.setText("");
        txCantidad.setText("");
        txPrecio.setText("");
