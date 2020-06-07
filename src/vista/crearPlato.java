@@ -10,7 +10,8 @@ import modelo.Producto;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import modelo.ArrayLinearList;
+//import modelo.ArrayLinearList;
+import modelo.MinHeap;
 import static vista.Menu.contenedor;
 
 
@@ -26,7 +27,7 @@ public final class crearPlato extends javax.swing.JPanel {
      */
 
     
-    public void IngredientesCB( ArrayLinearList <Producto> ingredientes){
+    public void IngredientesCB( MinHeap <Producto> ingredientes){
         Ingrediente1.addItem("Nulo");
         Ingrediente2.addItem("Nulo");
         Ingrediente3.addItem("Nulo");
@@ -37,17 +38,17 @@ public final class crearPlato extends javax.swing.JPanel {
         Ingrediente8.addItem("Nulo");
         Ingrediente9.addItem("Nulo");
         Ingrediente10.addItem("Nulo"); 
-        for(int i=0;i<ingredientes.size();i++){
-            Ingrediente1.addItem(ingredientes.get(i).getNombre());
-            Ingrediente2.addItem(ingredientes.get(i).getNombre());
-            Ingrediente3.addItem(ingredientes.get(i).getNombre());
-            Ingrediente4.addItem(ingredientes.get(i).getNombre());
-            Ingrediente5.addItem(ingredientes.get(i).getNombre());
-            Ingrediente6.addItem(ingredientes.get(i).getNombre());
-            Ingrediente7.addItem(ingredientes.get(i).getNombre());
-            Ingrediente8.addItem(ingredientes.get(i).getNombre());
-            Ingrediente9.addItem(ingredientes.get(i).getNombre());
-            Ingrediente10.addItem(ingredientes.get(i).getNombre()); 
+        for(int i=1;i<=ingredientes.size();i++){
+            Ingrediente1.addItem(ingredientes.getNode(i).getNombre());
+            Ingrediente2.addItem(ingredientes.getNode(i).getNombre());
+            Ingrediente3.addItem(ingredientes.getNode(i).getNombre());
+            Ingrediente4.addItem(ingredientes.getNode(i).getNombre());
+            Ingrediente5.addItem(ingredientes.getNode(i).getNombre());
+            Ingrediente6.addItem(ingredientes.getNode(i).getNombre());
+            Ingrediente7.addItem(ingredientes.getNode(i).getNombre());
+            Ingrediente8.addItem(ingredientes.getNode(i).getNombre());
+            Ingrediente9.addItem(ingredientes.getNode(i).getNombre());
+            Ingrediente10.addItem(ingredientes.getNode(i).getNombre()); 
         }
     }
     

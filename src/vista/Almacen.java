@@ -6,9 +6,10 @@
 package vista;
 
 import modelo.Producto;
-import modelo.ArrayLinearList;
+//import modelo.ArrayLinearList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.MinHeap;
 
 /**
  *
@@ -17,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 public class Almacen extends javax.swing.JFrame {
     
     
-public static ArrayLinearList<Producto> bodega = new ArrayLinearList<>( );
+public static MinHeap <Producto> bodega = new MinHeap <>( );
 public int buscar;    
 
 /**
@@ -46,13 +47,13 @@ public int buscar;
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Guardar = new javax.swing.JButton();
         txNombre = new javax.swing.JTextField();
         txCantidad = new javax.swing.JTextField();
         txPrecio = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Mostrar = new javax.swing.JButton();
+        Modificar = new javax.swing.JButton();
+        Eliminar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -85,13 +86,13 @@ public int buscar;
         jLabel4.setText("Precio por unidad");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Guardar.setText("Guardar");
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                GuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, -1, -1));
+        getContentPane().add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, -1, -1));
 
         txNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,29 +114,29 @@ public int buscar;
         });
         getContentPane().add(txPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 150, -1));
 
-        jButton2.setText("Mostrar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Mostrar.setText("Mostrar");
+        Mostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                MostrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 89, -1));
+        getContentPane().add(Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 89, -1));
 
-        jButton3.setText("Modificar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Modificar.setText("Modificar");
+        Modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ModificarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
+        getContentPane().add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
 
-        jButton4.setText("Eliminar ");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Eliminar.setText("Eliminar ");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                EliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
+        getContentPane().add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
 
         jLabel6.setText("gr");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, -1, -1));
@@ -160,7 +161,7 @@ public int buscar;
         // TODO add your handling code here:
     }//GEN-LAST:event_txPrecioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
         String n=txNombre.getText();
         String c=txCantidad.getText();
         String p=txPrecio.getText();
@@ -171,13 +172,13 @@ public int buscar;
                 if(!p.isEmpty()){
                     
                     Producto pro=new Producto(n,Integer.parseInt(c),Double.parseDouble(p));
-                    bodega.add(0, pro);
+                    bodega.put(pro);
                      JOptionPane.showMessageDialog(null,"Producto guardado con exito");
                      txNombre.setText("");
                      txCantidad.setText("");
                      txPrecio.setText("");
-                     for(int i=0;i<bodega.size();i++){
-                     System.out.println(bodega.get(i).getNombre());
+                     for(int i=1;i<=bodega.size();i++){
+                     System.out.println(bodega.getNode(i).getNombre());
                      }
                 }else{
                 JOptionPane.showMessageDialog(null,"El campo Precio por unidad esta vacio");
@@ -192,9 +193,9 @@ public int buscar;
         
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_GuardarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarActionPerformed
         Inventario i1=new Inventario();
         i1.setVisible(true);
        
@@ -205,7 +206,7 @@ public int buscar;
         Object o[]=null;
       
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_MostrarActionPerformed
 
     private void txNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txNombreKeyTyped
     
@@ -214,8 +215,8 @@ public int buscar;
         if(press==10){
             String nombreEncontrado= txNombre.getText().trim();
             Producto p;
-            for (int i = 0; i < bodega.size(); i++) {
-                p=bodega.get(i);
+            for (int i = 1; i <= bodega.size(); i++) {
+                p=bodega.getNode(i);
                     if(nombreEncontrado.equalsIgnoreCase(p.getNombre())){
                         txCantidad.setText(String.valueOf(p.getCantidad()));
                         txPrecio.setText(String.valueOf(p.getCosto()));
@@ -233,7 +234,7 @@ public int buscar;
         
     }//GEN-LAST:event_txNombreKeyTyped
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
         // TODO add your handling code here:
         String nombre=txNombre.getText();
         String cantidad=txCantidad.getText();
@@ -246,9 +247,9 @@ public int buscar;
        txPrecio.setText("");
        
        
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ModificarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         // TODO add your handling code here:
        if(bodega.size()==0){jLabel9.setText("No hay productos que eliminar"); jDialog1.setVisible(true);}
        else {
@@ -262,7 +263,7 @@ public int buscar;
        
         
             
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_EliminarActionPerformed
 
     public void tamañoArreglo(){
    
@@ -272,10 +273,10 @@ public int buscar;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton Eliminar;
+    private javax.swing.JButton Guardar;
+    private javax.swing.JButton Modificar;
+    private javax.swing.JButton Mostrar;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

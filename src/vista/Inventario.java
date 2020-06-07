@@ -37,12 +37,12 @@ public class Inventario extends javax.swing.JFrame {
     
     public  void CargarDatos(){
     Producto p;
-    for(int i=0;Almacen.bodega.size()>i;i++){
-    p=Almacen.bodega.get(i);
-    modelo.insertRow(i, new Object[]{});
-    modelo.setValueAt(p.getNombre(), i,0);
-    modelo.setValueAt(p.getCantidad(), i,1);
-    modelo.setValueAt(p.getCosto(), i,2);
+    for(int i=1; i<= Almacen.bodega.size();i++){
+    p=Almacen.bodega.getNode(i);
+    modelo.insertRow(i-1, new Object[]{});
+    modelo.setValueAt(p.getNombre(), i-1,0);
+    modelo.setValueAt(p.getCantidad(), i-1,1);
+    modelo.setValueAt(p.getCosto(), i-1,2);
     }
     
     

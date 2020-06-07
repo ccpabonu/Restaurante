@@ -9,7 +9,7 @@ package modelo;
  *
  * @author Asus
  */
-public class Producto {
+public class Producto implements Comparable<Producto> {
     String nombre;
     int cantidad;
     double costo;
@@ -48,13 +48,13 @@ public class Producto {
     }
     
        
-    public Producto Buscar(String nombre, ArrayLinearList <Producto> ingredientes){
+    public Producto Buscar(String nombre, MinHeap <Producto> ingredientes){
         if(nombre.equals("Nulo")){
             return null;
         }else{
-            for(int i =0;i<ingredientes.size();i++){
-                if(nombre.equals(ingredientes.get(i).getNombre())){
-                    return ingredientes.get(i);
+            for(int i =1;i<=ingredientes.size();i++){
+                if(nombre.equals(ingredientes.getNode(i).getNombre())){
+                    return ingredientes.getNode(i);
                 }
             
             }
@@ -62,5 +62,12 @@ public class Producto {
          }  
         return null;
     }   
+
+    @Override
+    public int compareTo(Producto ProductoC) {
+        double comp= this.cantidad-ProductoC.cantidad;
+        int re=(int)Math.round(comp);
+        return re; 
+    }
     
     }
