@@ -6,6 +6,9 @@
 package vista;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.LinkedQueue;
 
 /**
@@ -99,7 +102,12 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jButtonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenuActionPerformed
-        Almacen F1=new Almacen();    
+        Almacen F1 = null;    
+        try {
+            F1 = new Almacen();
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         F1.setVisible(true);
     }//GEN-LAST:event_jButtonMenuActionPerformed
 

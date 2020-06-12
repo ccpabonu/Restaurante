@@ -9,8 +9,11 @@ import modelo.Plato;
 import modelo.Producto;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.Image;
+import static javafx.scene.paint.Color.color;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import modelo.ArrayLinearList;
@@ -23,10 +26,22 @@ public class Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu
+     * @param container
      */
+    /*
+  public void enableComponents(Container container, boolean enable) {
+    Component[] components = container.getComponents();
+    for (Component component : components) {
+        component.setEnabled(enable);
+        if (component instanceof Container) {
+            enableComponents((Container)component, enable);
+        }
+    }
+}
+    */
  
     Fondo fondo=new Fondo();
-    
+    MenuPrincipal ppal=new MenuPrincipal();
     
     public static ArrayLinearList <Plato> menu =new ArrayLinearList();// arreglo donde se van a guardar los datos de los platos
     
@@ -35,11 +50,13 @@ public class Menu extends javax.swing.JFrame {
     this.setContentPane(fondo);
     initComponents();
     this.setLocationRelativeTo(null);
-    MenuPrincipal ppal=new MenuPrincipal();
+    //ppal.setBackground(new Color (240,240,240,65));
     ppal.setSize(600,600);
-    ppal.setLocation(50,0);
+    ppal.setLocation(60,0);
     
+    //enableComponents(contenedor, false);
     contenedor.removeAll();
+    //contenedor.setBackground(new Color(0,0,0,0));
     contenedor.add(ppal,BorderLayout.CENTER);
     contenedor.revalidate();
     contenedor.repaint();

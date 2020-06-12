@@ -52,7 +52,7 @@ public class IOdoc {
             
             while ((line=reader.readLine()) != null){
                 String[] cont=line.split(",");
-                Producto aux= new Producto(cont[0],Integer.parseInt(cont[1]),Integer.parseInt(cont[2]));
+                Producto aux= new Producto(cont[0],Integer.parseInt(cont[1]),Double.parseDouble(cont[2]));
                 datos.put(aux);
             }
             reader.close();

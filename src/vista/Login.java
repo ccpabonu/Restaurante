@@ -8,7 +8,14 @@ import java.awt.Image;
 import java.security.SecureRandom;
 import java.math.BigInteger;
 import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static modelo.IOdoc.CargarInventario;
 import modelo.LinkedQueue;
+import modelo.MinHeap;
+import modelo.Producto;
+
 
 
 /**
@@ -17,6 +24,7 @@ import modelo.LinkedQueue;
  */
 public class Login extends javax.swing.JFrame {
     private LinkedQueue l =new LinkedQueue() ;
+    public static MinHeap <Producto> bodega = new MinHeap <>( );
     /**
      * Creates new form mainWindow
      */
@@ -143,7 +151,13 @@ public class Login extends javax.swing.JFrame {
         char[] arrayC = jPasswordField1.getPassword();
         b = new String(arrayC);        
         if(l.comparar(a,b)) men.setVisible(true);
-        else jDialog1.setVisible(true);       
+        else jDialog1.setVisible(true);   
+        
+        try {
+            CargarInventario(bodega);
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jTextFieldUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUserActionPerformed

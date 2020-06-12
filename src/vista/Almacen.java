@@ -5,10 +5,13 @@
  */
 package vista;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Producto;
 //import modelo.ArrayLinearList;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import static modelo.IOdoc.GuardarInventario;
 import modelo.MinHeap;
 
 /**
@@ -18,16 +21,18 @@ import modelo.MinHeap;
 public class Almacen extends javax.swing.JFrame {
     
     
-public static MinHeap <Producto> bodega = new MinHeap <>( );
+public static MinHeap <Producto> bodega = Login.bodega;
 public int buscar;    
+
 
 /**
      * Creates new form Almacen
      */
-    public Almacen() {
+    public Almacen() throws IOException {
         initComponents();
         this.setLocationRelativeTo(null);
         jDialog1.setLocationRelativeTo(null);
+        
         
     }
 
@@ -191,7 +196,12 @@ public int buscar;
            JOptionPane.showMessageDialog(null,"El campo Nombre esta vacio");
         }
         
-        
+    try {
+        GuardarInventario(bodega);
+    } catch (IOException ex) {
+        Logger.getLogger(Almacen.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
         
     }//GEN-LAST:event_GuardarActionPerformed
 
