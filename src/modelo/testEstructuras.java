@@ -38,8 +38,7 @@ public class testEstructuras {
         Usuario t=new Usuario("lol","123");
         Usuario s=new Usuario("cpu","123");        
         us.enQueue(r);
-        us.enQueue(t);
-        
+        us.enQueue(t);        
         System.out.print(us.buscar(s));
         
         

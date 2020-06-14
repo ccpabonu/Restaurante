@@ -153,7 +153,8 @@ public class Login extends javax.swing.JFrame {
         b = new String(arrayC);
         System.out.println(a);
         System.out.println(b);
-        Usuario log=new Usuario(a,b);        
+        Usuario log;
+        log=new Usuario(a,b);        
         if(l.buscar(log)) men.setVisible(true);
         else jDialog1.setVisible(true);   
         
@@ -215,7 +216,7 @@ public class Login extends javax.swing.JFrame {
         
         Usuario a=new Usuario("ccpabonu", "1234");
         Usuario b=new Usuario("cpu", "123");
-        LinkedQueue usuarios = new LinkedQueue();  //Crar la linkedlist de los usuarios que pueden acceder   
+        LinkedQueue <Usuario> usuarios = new LinkedQueue();  //Crar la linkedlist de los usuarios que pueden acceder   
         
         usuarios.enQueue(a);      //datos prueba
         usuarios.enQueue(b);

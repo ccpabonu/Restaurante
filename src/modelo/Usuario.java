@@ -17,7 +17,7 @@ public class Usuario {
         this.cuenta = cuenta;
         this.pass = pass;
     }
-    public boolean equal(Usuario u2){       
+    public boolean equals(Usuario u2){       
         if(u2.getCuenta()==this.cuenta && u2.getPass()==this.pass) return true;
         return false;        
     }    
