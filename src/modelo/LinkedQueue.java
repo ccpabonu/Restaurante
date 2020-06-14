@@ -12,7 +12,7 @@ interface Queue<T>{
     boolean isEmpty();
     T getFrontElement();
     T getRearElement();
-    void enQueue(T user1,T pass);
+    void enQueue(T user1);
     T deQueue();
     String toString();
 }
@@ -38,9 +38,9 @@ public class LinkedQueue<T> implements Queue<T>{
         return isEmpty() ? null : rear.user; 
     }
     
-    @Override
-    public void enQueue(T user1, T pass1){
-        ChainNode<T> p =new ChainNode<T>(user1,pass1,null);
+    
+    public void enQueue(T user1){
+        ChainNode<T> p =new ChainNode<T>(user1,null);
         if(front==null) front =p;
         else rear.next=p;
         rear=p;
@@ -55,26 +55,19 @@ public class LinkedQueue<T> implements Queue<T>{
         return save;        
     }
     
-    public boolean comparar (String user, String pass){
-        if(isEmpty()) return false;
+    public boolean buscar(T user1){        
+        if(isEmpty()) return false;        
         ChainNode q = new ChainNode();
         q=front;
-        while (q!=null){
-            if((q.user.equals(user)) && (q.pass.equals(pass))) return true;
+        if(user1 instanceof Usuario){            
+            while (q!=null){                        
+            if(((Usuario) q.user).equal((Usuario) user1)) return true;
             q=q.next;
+            }           
         }
-        return false;      
+        return false;            
     }
-    public void cambiarcontraseña ( T user1, T pass1){        
-        if (front.user.equals(user1))front.pass=pass1 ;
-        else  cambiarcontraseña(front.next, user1,pass1);                       
-    }
-    public void cambiarcontraseña ( ChainNode s,T user1, T pass1){
-        if(s!=null){
-            if (s.user.equals(user1))s.pass=pass1 ;
-            else  cambiarcontraseña(s.next, user1,pass1);
-        }                     
-    }
+    
     
     @Override
     public String toString(){
@@ -82,7 +75,7 @@ public class LinkedQueue<T> implements Queue<T>{
         ChainNode q;
         q=front;
         while(q!=null){
-            g.append(Objects.toString(q.user)+"--"+Objects.toString(q.pass)+", "); 
+            g.append(Objects.toString(q.user)+", "); 
             q=q.next;
         }
         g.setLength( g.length( ) - 2 );       

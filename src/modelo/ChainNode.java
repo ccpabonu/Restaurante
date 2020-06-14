@@ -6,21 +6,35 @@
 package modelo;
 import java.util.*;
 
-class ChainNode<T> {
-    T user;
-    T pass;
+public class ChainNode<T> {
+    T user;   
     ChainNode next;
     
     public ChainNode(){
-        this(null,null,null);
+        this(null,null);
     }
-    public ChainNode (T user1,T pass1){
-        this(user1,pass1,null);
+    public ChainNode (T user1){
+        this(user1,null);
     }
     
-    public ChainNode (T user1,T pass1, ChainNode next){
-        this.user = user1 ;
-        this.pass = pass1;
+    public ChainNode (T user1, ChainNode next){
+        this.user = user1 ;        
+        this.next = next;
+    }
+
+    public T getUser() {
+        return user;
+    }
+
+    public void setUser(T user) {
+        this.user = user;
+    }
+
+    public ChainNode getNext() {
+        return next;
+    }
+
+    public void setNext(ChainNode next) {
         this.next = next;
     }
 }

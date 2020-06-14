@@ -15,6 +15,8 @@ import static modelo.IOdoc.CargarInventario;
 import modelo.LinkedQueue;
 import modelo.MinHeap;
 import modelo.Producto;
+import modelo.Usuario;
+import modelo.ChainNode;
 
 
 
@@ -52,6 +54,7 @@ public class Login extends javax.swing.JFrame {
 
         jDialog1 = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
+        jLabelFondo = new javax.swing.JLabel();
         jButtonSalir = new javax.swing.JButton();
         jButtonLogin = new javax.swing.JButton();
         jLabelUser = new javax.swing.JLabel();
@@ -60,13 +63,19 @@ public class Login extends javax.swing.JFrame {
         jTextFieldUser = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
-        jLabelFondo = new javax.swing.JLabel();
 
         jDialog1.setLocation(new java.awt.Point(0, 0));
         jDialog1.setSize(new java.awt.Dimension(300, 100));
 
         jLabel4.setText("USUARIO O CONTRASEÑA  ERRONEOS");
         jDialog1.getContentPane().add(jLabel4, java.awt.BorderLayout.CENTER);
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jLabelFondo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabelFondoKeyPressed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -133,14 +142,6 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("RESTAURANTE EL BACAN ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
-        jLabelFondo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jLabelFondoKeyPressed(evt);
-            }
-        });
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 340));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -149,8 +150,11 @@ public class Login extends javax.swing.JFrame {
         Principal men = new Principal();
         a= jTextFieldUser.getText();
         char[] arrayC = jPasswordField1.getPassword();
-        b = new String(arrayC);        
-        if(l.comparar(a,b)) men.setVisible(true);
+        b = new String(arrayC);
+        System.out.println(a);
+        System.out.println(b);
+        Usuario log=new Usuario(a,b);        
+        if(l.buscar(log)) men.setVisible(true);
         else jDialog1.setVisible(true);   
         
         try {
@@ -209,10 +213,12 @@ public class Login extends javax.swing.JFrame {
 
         /* Create and display the form */
         
-        
+        Usuario a=new Usuario("ccpabonu", "1234");
+        Usuario b=new Usuario("cpu", "123");
         LinkedQueue usuarios = new LinkedQueue();  //Crar la linkedlist de los usuarios que pueden acceder   
-        usuarios.enQueue("ccpabonu", "1234");      //datos prueba
-        usuarios.enQueue("cpu", "123");
+        
+        usuarios.enQueue(a);      //datos prueba
+        usuarios.enQueue(b);
         //System.out.println(usuarios.getFrontElement());
         
         //usuarios.cambiarcontraseña("ccpabonu", "789");
