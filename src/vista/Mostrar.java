@@ -24,8 +24,6 @@ public class Mostrar extends javax.swing.JPanel {
 
     public Mostrar() {
         initComponents();
-        crearModelo();
-        llenarTabla(Menu.menu);
     }
 
     /**
@@ -95,53 +93,18 @@ public class Mostrar extends javax.swing.JPanel {
 
     private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
         // TODO add your handling code here:
-        MenuPrincipal ppal=new MenuPrincipal();
-        ppal.setSize(600,600);
-        ppal.setLocation(50,0);
-
-        contenedor.removeAll();
-        contenedor.add(ppal,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
+        
     }//GEN-LAST:event_AtrasActionPerformed
 
-    DefaultTableModel ver;
-    
-    private void crearModelo(){
-        try{
-            ver=(new DefaultTableModel(
-            null, new String[]{
-               "Numero","Nombre"}) {});
-            jTable1.setModel(ver);
-        
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Error");
-        
-        }
-    }
-    private void llenarTabla(ArrayLinearList <Plato> menu){
-        if(menu==null){
-            JOptionPane.showMessageDialog(null,"No hay contactos");
-        }
-        else{     
-           Object o[]=null;
-           for(int i=0;i < menu.size();i++){
-               Plato plato = menu.get(i);
-               ver.addRow(o);
-               ver.setValueAt(Integer.toString(i+1), i, 0);
-               ver.setValueAt(plato.getNombre(), i, 1);
 
-        }
-       }
-    }
     
     
         
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Atras;
+    public javax.swing.JButton Atras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

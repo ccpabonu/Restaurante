@@ -5,9 +5,6 @@
  */
 package vista;
 
-import java.awt.BorderLayout;
-import static vista.Menu.contenedor;
-
 /**
  *
  * @author Asus
@@ -90,32 +87,16 @@ public class MenuPrincipal extends javax.swing.JPanel {
 
     private void mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarActionPerformed
         // TODO add your handling code here:
-        Mostrar panel2=new Mostrar();
-        panel2.setSize(600,600);
-        panel2.setLocation(50,0);
-        
-        Menu.contenedor.removeAll();
-        Menu.contenedor.add(panel2,BorderLayout.CENTER);
-        Menu.contenedor.revalidate();
-        Menu.contenedor.repaint();
     }//GEN-LAST:event_mostrarActionPerformed
 
     private void crearPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearPlatoActionPerformed
         // TODO add your handling code here:
-        crearPlato panel1=new crearPlato();
-        panel1.setSize(750,500);
-        panel1.setLocation(50, 0);
-        //725,498
-        Menu.contenedor.removeAll();
-        Menu.contenedor.add(panel1,BorderLayout.CENTER);
-        Menu.contenedor.revalidate();
-        Menu.contenedor.repaint();
     }//GEN-LAST:event_crearPlatoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton crearPlato;
+    public javax.swing.JButton crearPlato;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton mostrar;
+    public javax.swing.JButton mostrar;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.controlador_menup;
 import modelo.Plato;
 import modelo.Producto;
 import java.awt.BorderLayout;
@@ -50,16 +51,12 @@ public class Menu extends javax.swing.JFrame {
     this.setContentPane(fondo);
     initComponents();
     this.setLocationRelativeTo(null);
+    controlador_menup ctlr_mp=new controlador_menup(ppal);
+    ctlr_mp.iniciar();
     //ppal.setBackground(new Color (240,240,240,65));
-    ppal.setSize(600,600);
-    ppal.setLocation(60,0);
-    
     //enableComponents(contenedor, false);
-    contenedor.removeAll();
     //contenedor.setBackground(new Color(0,0,0,0));
-    contenedor.add(ppal,BorderLayout.CENTER);
-    contenedor.revalidate();
-    contenedor.repaint();
+   
     
 
     }

@@ -47,22 +47,6 @@ public class Producto implements Comparable<Producto> {
         
     }
     
-       
-    public Producto Buscar(String nombre, MinHeap <Producto> ingredientes){
-        if(nombre.equals("Nulo")){
-            return null;
-        }else{
-            for(int i =1;i<=ingredientes.size();i++){
-                if(nombre.equals(ingredientes.getNode(i).getNombre())){
-                    return ingredientes.getNode(i);
-                }
-            
-            }
-            
-         }  
-        return null;
-    }   
-
     @Override
     public int compareTo(Producto ProductoC) {
         double comp= this.cantidad-ProductoC.cantidad;

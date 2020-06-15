@@ -5,14 +5,7 @@
  */
 package vista;
 
-import modelo.Plato;
-import modelo.Producto;
-import java.awt.BorderLayout;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 //import modelo.ArrayLinearList;
-import modelo.MinHeap;
-import static vista.Menu.contenedor;
 
 
 /**
@@ -27,44 +20,12 @@ public final class crearPlato extends javax.swing.JPanel {
      */
 
     
-    public void IngredientesCB( MinHeap <Producto> ingredientes){
-        Ingrediente1.addItem("Nulo");
-        Ingrediente2.addItem("Nulo");
-        Ingrediente3.addItem("Nulo");
-        Ingrediente4.addItem("Nulo");
-        Ingrediente5.addItem("Nulo");
-        Ingrediente6.addItem("Nulo");
-        Ingrediente7.addItem("Nulo");
-        Ingrediente8.addItem("Nulo");
-        Ingrediente9.addItem("Nulo");
-        Ingrediente10.addItem("Nulo"); 
-        for(int i=1;i<=ingredientes.size();i++){
-            Ingrediente1.addItem(ingredientes.getNode(i).getNombre());
-            Ingrediente2.addItem(ingredientes.getNode(i).getNombre());
-            Ingrediente3.addItem(ingredientes.getNode(i).getNombre());
-            Ingrediente4.addItem(ingredientes.getNode(i).getNombre());
-            Ingrediente5.addItem(ingredientes.getNode(i).getNombre());
-            Ingrediente6.addItem(ingredientes.getNode(i).getNombre());
-            Ingrediente7.addItem(ingredientes.getNode(i).getNombre());
-            Ingrediente8.addItem(ingredientes.getNode(i).getNombre());
-            Ingrediente9.addItem(ingredientes.getNode(i).getNombre());
-            Ingrediente10.addItem(ingredientes.getNode(i).getNombre()); 
-        }
-    }
+
     
-    public double getValue(JTextField cantidad){
-        double x;
-        if(cantidad.getText().equals("nulo")){
-            x=000;
-        }else{
-            x=Double.parseDouble(cantidad.getText());
-        } 
-        return x;
-    }
+
     
     public crearPlato() {
         initComponents();
-        IngredientesCB(Almacen.bodega);
     }
 
     /**
@@ -129,8 +90,8 @@ public final class crearPlato extends javax.swing.JPanel {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        Crear = new javax.swing.JButton();
-        Atras = new javax.swing.JButton();
+        btnCrear = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(755, 463));
 
@@ -282,19 +243,19 @@ public final class crearPlato extends javax.swing.JPanel {
 
         jLabel32.setText("gr.");
 
-        Crear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        Crear.setText("CREAR");
-        Crear.addActionListener(new java.awt.event.ActionListener() {
+        btnCrear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnCrear.setText("CREAR");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CrearActionPerformed(evt);
+                btnCrearActionPerformed(evt);
             }
         });
 
-        Atras.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        Atras.setText("ATRAS");
-        Atras.addActionListener(new java.awt.event.ActionListener() {
+        btnAtras.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnAtras.setText("ATRAS");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AtrasActionPerformed(evt);
+                btnAtrasActionPerformed(evt);
             }
         });
 
@@ -420,9 +381,9 @@ public final class crearPlato extends javax.swing.JPanel {
                                 .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(Atras, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(166, 166, 166)
-                        .addComponent(Crear, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -507,8 +468,8 @@ public final class crearPlato extends javax.swing.JPanel {
                     .addComponent(jLabel32))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Atras, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Crear, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -557,108 +518,44 @@ public final class crearPlato extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_Cantidad10ActionPerformed
 
-    private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
-        // TODO add your handling code here:
-    String name= Nombre.getText();
-    if (!name.isEmpty()){
-        Producto I1=new Producto();
-        Producto I2=new Producto();
-        Producto I3=new Producto();
-        Producto I4=new Producto();
-        Producto I5=new Producto();
-        Producto I6=new Producto();
-        Producto I7=new Producto();
-        Producto I8=new Producto();
-        Producto I9=new Producto();
-        Producto I10=new Producto();
-        I1=I1.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-        I2=I2.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-        I3=I3.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-        I4=I4.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-        I5=I5.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-        I6=I6.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-        I7=I7.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-        I8=I8.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-        I9=I9.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-        I10=I10.Buscar(Ingrediente1.getSelectedItem().toString(), Almacen.bodega);
-
-        double C1=getValue(Cantidad1);
-        double C2=getValue(Cantidad2);
-        double C3=getValue(Cantidad3);
-        double C4=getValue(Cantidad4);
-        double C5=getValue(Cantidad5);
-        double C6=getValue(Cantidad6);
-        double C7=getValue(Cantidad7);
-        double C8=getValue(Cantidad8);
-        double C9=getValue(Cantidad9);
-        double C10=getValue(Cantidad10);
-
-        Plato plato= new Plato(name,I1,I2,I3,I4,I5,I6,I7,I8,I9,I10,C1,C2,C3,C4,C5,C6,C7,C8,C9,C10);
-        Menu.menu.add(plato);
-
-        JOptionPane.showMessageDialog(null, "Plato creado con exito");
-
-        Nombre.setText("");
-        Cantidad1.setText("nulo");
-        Cantidad2.setText("nulo");
-        Cantidad3.setText("nulo");
-        Cantidad4.setText("nulo");
-        Cantidad5.setText("nulo");
-        Cantidad6.setText("nulo");
-        Cantidad7.setText("nulo");
-        Cantidad8.setText("nulo");
-        Cantidad9.setText("nulo");
-        Cantidad10.setText("nulo");
-    
-    }else{
-        JOptionPane.showMessageDialog(null,"El espacio nombre se encuentra vacio");
-    }
-    
-
-
-    }//GEN-LAST:event_CrearActionPerformed
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        // TODO add your handling code here
+    }//GEN-LAST:event_btnCrearActionPerformed
 
     private void Ingrediente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ingrediente1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Ingrediente1ActionPerformed
 
-    private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         // TODO add your handling code here:
-        MenuPrincipal ppal=new MenuPrincipal();
-        ppal.setSize(600,600);
-        ppal.setLocation(50,0);
 
-        contenedor.removeAll();
-        contenedor.add(ppal,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();
-    }//GEN-LAST:event_AtrasActionPerformed
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Atras;
-    private javax.swing.JTextField Cantidad1;
-    private javax.swing.JTextField Cantidad10;
-    private javax.swing.JTextField Cantidad2;
-    private javax.swing.JTextField Cantidad3;
-    private javax.swing.JTextField Cantidad4;
-    private javax.swing.JTextField Cantidad5;
-    private javax.swing.JTextField Cantidad6;
-    private javax.swing.JTextField Cantidad7;
-    private javax.swing.JTextField Cantidad8;
-    private javax.swing.JTextField Cantidad9;
-    private javax.swing.JButton Crear;
-    private javax.swing.JComboBox<String> Ingrediente1;
-    private javax.swing.JComboBox<String> Ingrediente10;
-    private javax.swing.JComboBox<String> Ingrediente2;
-    private javax.swing.JComboBox<String> Ingrediente3;
-    private javax.swing.JComboBox<String> Ingrediente4;
-    private javax.swing.JComboBox<String> Ingrediente5;
-    private javax.swing.JComboBox<String> Ingrediente6;
-    private javax.swing.JComboBox<String> Ingrediente7;
-    private javax.swing.JComboBox<String> Ingrediente8;
-    private javax.swing.JComboBox<String> Ingrediente9;
-    private javax.swing.JTextField Nombre;
+    public javax.swing.JTextField Cantidad1;
+    public javax.swing.JTextField Cantidad10;
+    public javax.swing.JTextField Cantidad2;
+    public javax.swing.JTextField Cantidad3;
+    public javax.swing.JTextField Cantidad4;
+    public javax.swing.JTextField Cantidad5;
+    public javax.swing.JTextField Cantidad6;
+    public javax.swing.JTextField Cantidad7;
+    public javax.swing.JTextField Cantidad8;
+    public javax.swing.JTextField Cantidad9;
+    public javax.swing.JComboBox<String> Ingrediente1;
+    public javax.swing.JComboBox<String> Ingrediente10;
+    public javax.swing.JComboBox<String> Ingrediente2;
+    public javax.swing.JComboBox<String> Ingrediente3;
+    public javax.swing.JComboBox<String> Ingrediente4;
+    public javax.swing.JComboBox<String> Ingrediente5;
+    public javax.swing.JComboBox<String> Ingrediente6;
+    public javax.swing.JComboBox<String> Ingrediente7;
+    public javax.swing.JComboBox<String> Ingrediente8;
+    public javax.swing.JComboBox<String> Ingrediente9;
+    public javax.swing.JTextField Nombre;
+    public javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnCrear;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
