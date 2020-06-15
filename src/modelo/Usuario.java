@@ -17,9 +17,8 @@ public class Usuario {
         this.cuenta = cuenta;
         this.pass = pass;
     }
-    public boolean equals(Usuario u2){       
-        if(u2.getCuenta()==this.cuenta && u2.getPass()==this.pass) return true;
-        return false;        
+    public boolean equal(Usuario u2){       
+        return (u2.getCuenta() == null ? this.cuenta == null : u2.getCuenta().equals(this.cuenta)) && u2.getPass()==this.pass;        
     }    
 
     public String getCuenta() {

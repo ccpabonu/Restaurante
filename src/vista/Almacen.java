@@ -22,13 +22,13 @@ public class Almacen extends javax.swing.JFrame {
     
     
 public static MinHeap <Producto> bodega = Login.bodega;
-public int buscar;    
+public static int buscar;    
 
 
 /**
      * Creates new form Almacen
      */
-    public Almacen() throws IOException {
+    public Almacen()  {
         initComponents();
         this.setLocationRelativeTo(null);
         jDialog1.setLocationRelativeTo(null);
@@ -59,9 +59,9 @@ public int buscar;
         Mostrar = new javax.swing.JButton();
         Modificar = new javax.swing.JButton();
         Eliminar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        btnAtras = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         jDialog1.setSize(new java.awt.Dimension(300, 100));
@@ -143,14 +143,20 @@ public int buscar;
         });
         getContentPane().add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
 
-        jLabel6.setText("gr");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, -1, -1));
-
         jLabel7.setText("gr");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, -1, -1));
 
-        jLabel8.setText("gr");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, -1, -1));
+        jLabel8.setText("Pesos");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, -1, -1));
+
+        btnAtras.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAtras.setText("Volver ");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 100, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inventario-de-perdida.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -10, 540, 370));
@@ -167,55 +173,14 @@ public int buscar;
     }//GEN-LAST:event_txPrecioActionPerformed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        String n=txNombre.getText();
-        String c=txCantidad.getText();
-        String p=txPrecio.getText();
-        
-        if(!n.isEmpty())    {
-        
-            if(!c.isEmpty()){
-                if(!p.isEmpty()){
-                    
-                    Producto pro=new Producto(n,Integer.parseInt(c),Double.parseDouble(p));
-                    bodega.put(pro);
-                     JOptionPane.showMessageDialog(null,"Producto guardado con exito");
-                     txNombre.setText("");
-                     txCantidad.setText("");
-                     txPrecio.setText("");
-                     for(int i=1;i<=bodega.size();i++){
-                     System.out.println(bodega.getNode(i).getNombre());
-                     }
-                }else{
-                JOptionPane.showMessageDialog(null,"El campo Precio por unidad esta vacio");
-                }
-            }else{
-            JOptionPane.showMessageDialog(null,"El campo Cantidad esta vacio");
-            }
-            
-        }else{
-           JOptionPane.showMessageDialog(null,"El campo Nombre esta vacio");
-        }
-        
-    try {
-        GuardarInventario(bodega);
-    } catch (IOException ex) {
-        Logger.getLogger(Almacen.class.getName()).log(Level.SEVERE, null, ex);
-    }
-
+    
         
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarActionPerformed
-        Inventario i1=new Inventario();
-        i1.setVisible(true);
-       
         
-     
-        int a=bodega.size();
-        System.out.println(a);
-        Object o[]=null;
+        
       
-        
     }//GEN-LAST:event_MostrarActionPerformed
 
     private void txNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txNombreKeyTyped
@@ -245,35 +210,21 @@ public int buscar;
     }//GEN-LAST:event_txNombreKeyTyped
 
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
-        // TODO add your handling code here:
-        String nombre=txNombre.getText();
-        String cantidad=txCantidad.getText();
-        String precio=txPrecio.getText();
         
-        Producto pro1=new Producto (nombre,Integer.parseInt(cantidad),Double.parseDouble(precio));
-       bodega.set(pro1,buscar);
-       txNombre.setText("");
-       txCantidad.setText("");
-       txPrecio.setText("");
        
        
     }//GEN-LAST:event_ModificarActionPerformed
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        // TODO add your handling code here:
-       if(bodega.size()==0){jLabel9.setText("No hay productos que eliminar"); jDialog1.setVisible(true);}
-       else {
-           jLabel9.setText("Se Elimino correctamente");
-           jDialog1.setVisible(true);
-           bodega.remove(buscar);
-           txNombre.setText("");
-           txCantidad.setText("");
-           txPrecio.setText("");           
-       }
-       
+        
         
             
     }//GEN-LAST:event_EliminarActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     public void tamañoArreglo(){
    
@@ -283,22 +234,22 @@ public int buscar;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Eliminar;
-    private javax.swing.JButton Guardar;
-    private javax.swing.JButton Modificar;
-    private javax.swing.JButton Mostrar;
+    public javax.swing.JButton Eliminar;
+    public javax.swing.JButton Guardar;
+    public javax.swing.JButton Modificar;
+    public javax.swing.JButton Mostrar;
+    public javax.swing.JButton btnAtras;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField txCantidad;
-    private javax.swing.JTextField txNombre;
-    private javax.swing.JTextField txPrecio;
+    public javax.swing.JTextField txCantidad;
+    public javax.swing.JTextField txNombre;
+    public javax.swing.JTextField txPrecio;
     // End of variables declaration//GEN-END:variables
 }

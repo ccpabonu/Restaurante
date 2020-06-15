@@ -61,7 +61,7 @@ public class LinkedQueue<T> implements Queue<T>{
         q=front;
         if(user1 instanceof Usuario){            
             while (q!=null){                        
-            if(((Usuario) q.user).equals((Usuario) user1)) return true;
+            if(((Usuario) q.user).equal((Usuario) user1)) return true;
             q=q.next;
             }           
         }

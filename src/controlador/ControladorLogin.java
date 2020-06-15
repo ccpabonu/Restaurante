@@ -45,8 +45,11 @@ public class ControladorLogin implements ActionListener {
             System.out.println(a);
             System.out.println(b);
             Usuario us1;
+            a="cpu";
+            b="123";
             us1 = new Usuario(a, b);
-            if (l.buscar(log)) {
+            us1=(Usuario) us1;
+            if (l.buscar(us1)) {
                 men.setVisible(true);
             } else {
                 log.jDialog1.setVisible(true);

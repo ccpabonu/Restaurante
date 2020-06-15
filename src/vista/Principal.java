@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package vista;
+import controlador.ControladorAlmacen;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.LinkedQueue;
+import modelo.ModeloAlmacen;
 
 /**
  *
@@ -42,8 +44,8 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonAtras = new javax.swing.JButton();
-        jButtonMenu = new javax.swing.JButton();
-        jButtonBodega = new javax.swing.JButton();
+        btnBodega = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -61,25 +63,25 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 100, 30));
 
-        jButtonMenu.setBackground(new java.awt.Color(255, 153, 153));
-        jButtonMenu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButtonMenu.setText("Bodega");
-        jButtonMenu.addActionListener(new java.awt.event.ActionListener() {
+        btnBodega.setBackground(new java.awt.Color(255, 153, 153));
+        btnBodega.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnBodega.setText("Bodega");
+        btnBodega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMenuActionPerformed(evt);
+                btnBodegaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 150, 30));
+        getContentPane().add(btnBodega, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 150, 30));
 
-        jButtonBodega.setBackground(new java.awt.Color(255, 153, 153));
-        jButtonBodega.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButtonBodega.setText("Crear Menú");
-        jButtonBodega.addActionListener(new java.awt.event.ActionListener() {
+        btnMenu.setBackground(new java.awt.Color(255, 153, 153));
+        btnMenu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnMenu.setText("Crear Menú");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBodegaActionPerformed(evt);
+                btnMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBodega, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 160, 30));
+        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 160, 30));
 
         jButtonSalir.setBackground(new java.awt.Color(255, 153, 153));
         jButtonSalir.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -101,30 +103,23 @@ public class Principal extends javax.swing.JFrame {
         Login mainW = new Login();
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
-    private void jButtonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenuActionPerformed
-        Almacen F1 = null;    
-        try {
-            F1 = new Almacen();
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        F1.setVisible(true);
-    }//GEN-LAST:event_jButtonMenuActionPerformed
+    private void btnBodegaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBodegaActionPerformed
+         
+    }//GEN-LAST:event_btnBodegaActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
-    private void jButtonBodegaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBodegaActionPerformed
-        Menu ppal= new Menu();
-        ppal.setVisible(true);
-    }//GEN-LAST:event_jButtonBodegaActionPerformed
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+      
+    }//GEN-LAST:event_btnMenuActionPerformed
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnBodega;
+    public javax.swing.JButton btnMenu;
     private javax.swing.JButton jButtonAtras;
-    private javax.swing.JButton jButtonBodega;
-    private javax.swing.JButton jButtonMenu;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
