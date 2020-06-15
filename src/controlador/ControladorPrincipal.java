@@ -18,7 +18,7 @@ import vista.Principal;
  */
 public class ControladorPrincipal implements ActionListener {
 
-      private Principal p;
+      private Principal p=new Principal();
       private ModeloPrincipal mp; 
       
         public ControladorPrincipal(Principal p, ModeloPrincipal mp) {
@@ -27,11 +27,12 @@ public class ControladorPrincipal implements ActionListener {
         this.p.btnBodega.addActionListener(this);
         this.p.btnMenu.addActionListener(this);
         
-    } 
+    }     
         
-         public void iniciar(){
+        public void iniciar(){
         p.setTitle("Guardar producto");
         p.setLocationRelativeTo(null);
+        p.setVisible(true);
     }
          
      public void actionPerformed(ActionEvent a){

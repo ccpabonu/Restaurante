@@ -42,7 +42,7 @@ if(a.getSource()==a2.Guardar){
             m1.setPrecio(a2.txPrecio.getText());
             m1.guardar();
             a2.txNombre.setText("");
-            System.out.println("LLEGA Aca");
+            //System.out.println("LLEGA Aca");
             a2.txCantidad.setText("");
             a2.txPrecio.setText("");
         }if(a.getSource()==a2.Mostrar){
@@ -59,10 +59,11 @@ if(a.getSource()==a2.Guardar){
             m1.setPrecio(a2.txPrecio.getText());
             m1.Modificar();
             a2.txNombre.setText("");
-            System.out.println("LLEGA Acax2");
+            //System.out.println("LLEGA Acax2");
             a2.txCantidad.setText("");
             a2.txPrecio.setText("");
         }if(a.getSource()==a2.btnAtras){
+            
             m1.volver();
             
         }

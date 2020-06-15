@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import controlador.ControladorPrincipal;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -82,10 +83,10 @@ public class ModeloAlmacen {
 
     }
     public void volver(){
-        Principal p1 =new Principal();
-        p1.setVisible(true);
-        Object o[]=null;
-        System.out.println("volviste con exito");
+        Principal p=new Principal();
+        ModeloPrincipal mp = new ModeloPrincipal();
+        ControladorPrincipal men = new ControladorPrincipal(p,mp);
+        men.iniciar();
         A.setVisible(false);
     }
      public void Eliminar(){

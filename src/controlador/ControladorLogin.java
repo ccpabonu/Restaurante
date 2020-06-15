@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import static modelo.IOdoc.CargarInventario;
 import modelo.LinkedQueue;
+import modelo.ModeloPrincipal;
 import modelo.Usuario;
 import vista.Login;
 import static vista.Login.bodega;
@@ -38,7 +39,9 @@ public class ControladorLogin implements ActionListener {
 
         if (ae.getSource() ==log.jButtonLogin ) {
             String a, b;
-            Principal men = new Principal();
+            Principal p=new Principal();
+            ModeloPrincipal mp = new ModeloPrincipal();
+            ControladorPrincipal men = new ControladorPrincipal(p,mp);
             a = log.jTextFieldUser.getText();
             char[] arrayC = log.jPasswordField1.getPassword();
             b = new String(arrayC);            
@@ -49,8 +52,9 @@ public class ControladorLogin implements ActionListener {
             b="123";
             us1 = new Usuario(a, b);
             us1=(Usuario) us1;
-            if (l.buscar(us1)) {
-                men.setVisible(true);
+            if (l.buscar(us1)) {                 
+                men.iniciar();
+                log.setVisible(false);
             } else {
                 log.jDialog1.setVisible(true);
             }
