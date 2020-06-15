@@ -5,11 +5,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ccpabonu
  */
-public class Usuario {
+public class Usuario implements Serializable  {
     private String cuenta;
     private String pass;
 
@@ -18,7 +20,7 @@ public class Usuario {
         this.pass = pass;
     }
     public boolean equal(Usuario u2){       
-        return (u2.getCuenta() == null ? this.cuenta == null : u2.getCuenta().equals(this.cuenta)) && u2.getPass()==this.pass;        
+        return u2.getCuenta().equalsIgnoreCase(this.cuenta) && u2.getPass().equalsIgnoreCase(this.pass);        
     }    
 
     public String getCuenta() {

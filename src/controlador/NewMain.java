@@ -5,6 +5,9 @@
  */
 package controlador;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import modelo.IOdoc2;
 import modelo.LinkedQueue;
 import modelo.Usuario;
 import vista.Login;
@@ -18,15 +21,14 @@ public class NewMain {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
         Login log = new Login();
         LinkedQueue <Usuario> us = new LinkedQueue();
-        Usuario r=new Usuario("cpu","123");
-        Usuario t=new Usuario("lol","123");
-        us.enQueue(r);
-        us.enQueue(t);
-        ControladorLogin ctr =new ControladorLogin(log,us);
-        log.setVisible(true);
+        
+        //System.out.println(us.getFrontElement().getCuenta());
+        //System.out.println(us.getFrontElement().getPass());         
+        ControladorLogin ctr =new ControladorLogin(log);
+        ctr.iniciar();
     }
     
 }

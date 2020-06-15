@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 package modelo;
+import java.io.Serializable;
 import java.util.*;
 
-public class ChainNode<T> {
+public class ChainNode<T> implements Serializable{
     T user;   
     ChainNode next;
     

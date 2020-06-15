@@ -32,8 +32,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() { 
         
-        initComponents(); 
-        this.setLocationRelativeTo(null);
+        initComponents();        
         jDialog1.setLocationRelativeTo(null);
         
     }
@@ -55,6 +54,7 @@ public class Login extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jButtonSalir = new javax.swing.JButton();
         jButtonLogin = new javax.swing.JButton();
         jLabelUser = new javax.swing.JLabel();
@@ -62,7 +62,8 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextFieldUser = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
+        jButtonCrear = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         jDialog1.setLocation(new java.awt.Point(0, 0));
@@ -78,6 +79,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setText("jLabel6");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -90,7 +93,7 @@ public class Login extends javax.swing.JFrame {
                 jButtonSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 100, 30));
+        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 100, 30));
 
         jButtonLogin.setBackground(new java.awt.Color(255, 153, 153));
         jButtonLogin.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -109,7 +112,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabelUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/User.png"))); // NOI18N
         jLabelUser.setText("jLabel1");
-        getContentPane().add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 240, 270));
+        getContentPane().add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 240, 270));
 
         jLabel1.setBackground(new java.awt.Color(255, 153, 153));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -143,10 +146,20 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 130, -1));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("RESTAURANTE EL BACAN ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+        jButtonCrear.setBackground(new java.awt.Color(255, 153, 153));
+        jButtonCrear.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButtonCrear.setText("Crear Usuario");
+        jButtonCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCrearActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 190, -1));
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("RESTAURANTE EL BACAN ");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 1, 720, 340));
@@ -179,15 +192,21 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
+    private void jButtonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearActionPerformed
+        
+    }//GEN-LAST:event_jButtonCrearActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton jButtonCrear;
     public javax.swing.JButton jButtonLogin;
     public javax.swing.JButton jButtonSalir;
     public javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelUser;
     public javax.swing.JPasswordField jPasswordField1;

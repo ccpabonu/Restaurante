@@ -3,6 +3,7 @@ Queue con un stack Linkedlist implementado
  */
 package modelo;
 
+import java.io.Serializable;
 import java.util.*;
 import modelo.ChainNode.*;
 
@@ -16,7 +17,7 @@ interface Queue<T>{
     T deQueue();
     String toString();
 }
-public class LinkedQueue<T> implements Queue<T>{
+public class LinkedQueue<T> implements Queue<T> ,Serializable {
     protected ChainNode<T> front;
     protected ChainNode<T> rear;
     

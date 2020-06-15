@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
@@ -32,16 +34,24 @@ public class testEstructuras {
         num = (Math.random() * 100000) + 1;
         return num;  
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
         LinkedQueue <Usuario> us = new LinkedQueue();
+        IOdoc2 doc = new IOdoc2();
         Usuario r=new Usuario("cpu","123");
         Usuario t=new Usuario("lol","123");
         Usuario s=new Usuario("cpu","123");        
         us.enQueue(r);
-        us.enQueue(t);        
-        System.out.print(us.buscar(s));
-        
-        
+        us.enQueue(t);
+        //us.enQueue(s);
+        /*doc.GuardarInventario(us);       
+        Usuario s=new Usuario("ccpabonu","1234");
+        us.enQueue(s);
+        doc.GuardarInventario(us);   */     
+        us=IOdoc2.CargarUsuarios();
+        System.out.println(us.getRearElement().getCuenta());
+        System.out.println(us.getRearElement().getPass());
+        System.out.println(us.buscar(s));        
+             
         
         
     }
