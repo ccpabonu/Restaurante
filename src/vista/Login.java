@@ -25,13 +25,13 @@ import modelo.ChainNode;
  * @author windows 10
  */
 public class Login extends javax.swing.JFrame {
-    private LinkedQueue l =new LinkedQueue() ;
+    
     public static MinHeap <Producto> bodega = new MinHeap <>( );
     /**
      * Creates new form mainWindow
      */
-    public Login(LinkedQueue k) { 
-        this.l=k;
+    public Login() { 
+        
         initComponents(); 
         this.setLocationRelativeTo(null);
         jDialog1.setLocationRelativeTo(null);
@@ -63,6 +63,7 @@ public class Login extends javax.swing.JFrame {
         jTextFieldUser = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         jDialog1.setLocation(new java.awt.Point(0, 0));
         jDialog1.setSize(new java.awt.Dimension(300, 100));
@@ -135,6 +136,11 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1.setBackground(new java.awt.Color(0, 0, 0));
         jPasswordField1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 130, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
@@ -142,27 +148,14 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("RESTAURANTE EL BACAN ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 1, 720, 340));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
-        String a,b;        
-        Principal men = new Principal();
-        a= jTextFieldUser.getText();
-        char[] arrayC = jPasswordField1.getPassword();
-        b = new String(arrayC);
-        System.out.println(a);
-        System.out.println(b);
-        Usuario log;
-        log=new Usuario(a,b);        
-        if(l.buscar(log)) men.setVisible(true);
-        else jDialog1.setVisible(true);   
         
-        try {
-            CargarInventario(bodega);
-        } catch (IOException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jTextFieldUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUserActionPerformed
@@ -182,58 +175,9 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonLoginKeyPressed
 
-    /**
-     * @param args the command line arguments
-     */
-    
-    
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        
-        Usuario a=new Usuario("ccpabonu", "1234");
-        Usuario b=new Usuario("cpu", "123");
-        LinkedQueue <Usuario> usuarios = new LinkedQueue();  //Crar la linkedlist de los usuarios que pueden acceder   
-        
-        usuarios.enQueue(a);      //datos prueba
-        usuarios.enQueue(b);
-        //System.out.println(usuarios.getFrontElement());
-        
-        //usuarios.cambiarcontraseña("ccpabonu", "789");
-        //System.out.println(usuarios.getFrontElement());
-                
-        
-        
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login(usuarios).setVisible(true);
-            }
-        });
-    }
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButtonLogin;
@@ -243,6 +187,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelUser;
     public javax.swing.JPasswordField jPasswordField1;
