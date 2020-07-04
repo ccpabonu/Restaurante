@@ -5,18 +5,11 @@
  */
 package vista;
 import java.awt.Image;
-import java.security.SecureRandom;
-import java.math.BigInteger;
 import java.awt.Toolkit;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import static modelo.IOdoc.CargarInventario;
-import modelo.LinkedQueue;
+import modelo.ArrayLinearList;
 import modelo.MinHeap;
 import modelo.Producto;
-import modelo.Usuario;
-import modelo.ChainNode;
+import modelo.Plato;
 
 
 
@@ -27,6 +20,7 @@ import modelo.ChainNode;
 public class Login extends javax.swing.JFrame {
     
     public static MinHeap <Producto> bodega = new MinHeap <>( );
+    public static ArrayLinearList <Plato> menu = new ArrayLinearList <>( );
     /**
      * Creates new form mainWindow
      */

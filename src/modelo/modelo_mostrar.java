@@ -7,17 +7,17 @@ package modelo;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import vista.Mostrar;
+import vista.Mostrar_p;
 
 /**
  *
  * @author Asus
  */
 public class modelo_mostrar {
-    Mostrar view;
+    Mostrar_p view;
     
     
-    public modelo_mostrar(Mostrar view){
+    public modelo_mostrar(Mostrar_p view){
         this.view=view;
     }
     

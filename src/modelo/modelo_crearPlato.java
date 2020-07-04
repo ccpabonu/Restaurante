@@ -6,8 +6,9 @@
 package modelo;
 
 import javax.swing.JOptionPane;
-import vista.Menu;
-import vista.crearPlato;
+import vista.crear_plato;
+import static vista.crear_plato.menu;
+
 
 /**
  *
@@ -15,22 +16,22 @@ import vista.crearPlato;
  */
 public class modelo_crearPlato {
     
-    crearPlato view;
+    crear_plato view;
     String name=null;
     Producto I1, I2, I3, I4, I5, I6, I7, I8, I9, I10=null;
     double  C1, C2, C3, C4, C5, C6, C7, C8, C9, C10=0;
 
     
     
-    public modelo_crearPlato(crearPlato view){
+    public modelo_crearPlato(crear_plato view){
         this.view=view;
     }
     
-    public crearPlato getView() {
+    public crear_plato getView() {
         return view;
     }
 
-    public void setView(crearPlato view) {
+    public void setView(crear_plato view) {
         this.view = view;
     }
 
@@ -233,7 +234,7 @@ public class modelo_crearPlato {
     
         Plato nuevo=new Plato(this.name,this.I1,this.I2,this.I3,this.I4,this.I5,this.I6,this.I7,this.I8,this.I9,this.I10,
                 this.C1,this.C2,this.C3,this.C4,this.C5,this.C6,this.C7,this.C8,this.C9,this.C10);
-        Menu.menu.add(nuevo);
+        menu.add(nuevo);
         JOptionPane.showMessageDialog(null, "Plato creado con exito");
     
     }   

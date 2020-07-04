@@ -3,21 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/vista/Login.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/vista/Mostrar.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/controlador/NewMain.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/vista/MenuPrincipal.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/modelo/ArrayLinearList.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/modelo/testEstructuras.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/modelo/Usuario.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/controlador/ControladorLogin.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/modelo/LinkedQueue.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/modelo/ChainNode.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/vista/Principal.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/vista/Inventario.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/vista/Menu.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/modelo/Producto.java</file>
-            <file>file:/home/ccpabonu/NetBeansProjects/Restaurante/src/vista/Almacen.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/controlador/NewMain.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/modelo/Producto.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/controlador/controlador_crearPlato.java</file>
         </group>
     </open-files>
 </project-private>

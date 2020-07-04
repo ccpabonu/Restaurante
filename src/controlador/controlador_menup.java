@@ -5,56 +5,50 @@
  */
 package controlador;
 
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.modelo_crearPlato;
 import modelo.modelo_mostrar;
-import static vista.Menu.contenedor;
-import vista.MenuPrincipal;
-import vista.Mostrar;
-import vista.crearPlato;
+import vista.Mostrar_p;
+import vista.crear_plato;
+import vista.menu_Platos;
 
 /**
  *
  * @author Asus
  */
 public class controlador_menup implements ActionListener {
-    MenuPrincipal view;
+    menu_Platos view;
     
     
     
-    public controlador_menup(MenuPrincipal view){
+    public controlador_menup(menu_Platos view){
         this.view=view;
         this.view.crearPlato.addActionListener(this);
         this.view.mostrar.addActionListener(this);
     }
     
     public void iniciar(){
-    this.view.setSize(600,600);
-    this.view.setLocation(60,0);
-   
-    contenedor.removeAll();
-    contenedor.add(this.view,BorderLayout.CENTER);
-    contenedor.revalidate();
-    contenedor.repaint();
-    
+        view.setTitle("MenuPlatos");
+        view.setLocationRelativeTo(null);
+        view.setVisible(true);
     }
     
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==view.crearPlato){
-            crearPlato crearp = new crearPlato(); 
+            crear_plato crearp = new crear_plato(); 
             modelo_crearPlato mod_cp=new modelo_crearPlato(crearp);
             controlador_crearPlato ctrl_cp= new controlador_crearPlato(mod_cp,crearp);
             ctrl_cp.iniciar();
-        
+            this.view.setVisible(false);
         }else if(e.getSource()==view.mostrar){
-            Mostrar mostrar = new Mostrar(); 
+            Mostrar_p mostrar = new Mostrar_p(); 
             modelo_mostrar mod_m=new modelo_mostrar(mostrar);
             controlador_mostrar ctrl_m= new controlador_mostrar(mod_m,mostrar);
             ctrl_m.iniciar();
+            this.view.setVisible(false);
         }
     }
     

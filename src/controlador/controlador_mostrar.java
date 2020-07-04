@@ -5,49 +5,42 @@
  */
 package controlador;
 
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.modelo_mostrar;
-import vista.Menu;
-import static vista.Menu.contenedor;
-import vista.MenuPrincipal;
-import vista.Mostrar;
+import static vista.Login.menu;
+import vista.Mostrar_p;
+import vista.menu_Platos;
 
 /**
  *
  * @author Asus
  */
 public class controlador_mostrar implements ActionListener{
-    Mostrar view;
+    Mostrar_p view;
     modelo_mostrar modelo= new modelo_mostrar(view);
     
     
-    public controlador_mostrar(modelo_mostrar modelo,Mostrar view){
+    public controlador_mostrar(modelo_mostrar modelo,Mostrar_p view){
         this.modelo=modelo;
         this.view=view;
         this.view.Atras.addActionListener(this);
     }
     
     public void iniciar(){
+        view.setTitle("Platos");
+        view.setLocationRelativeTo(null);
         modelo.crearModelo();
-        modelo.llenarTabla(Menu.menu);
-        
-        view.setSize(600,600);
-        view.setLocation(50,0);
-        
-        Menu.contenedor.removeAll();
-        Menu.contenedor.add(view,BorderLayout.CENTER);
-        Menu.contenedor.revalidate();
-        Menu.contenedor.repaint();
+        modelo.llenarTabla(menu);
+        view.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        MenuPrincipal mp=new MenuPrincipal();
+        menu_Platos mp=new menu_Platos();
         controlador_menup ctlr_mp=new controlador_menup(mp);
         ctlr_mp.iniciar();
-        
+        this.view.setVisible(false);
     }
     
 }

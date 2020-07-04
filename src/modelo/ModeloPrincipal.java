@@ -6,10 +6,10 @@
 package modelo;
 
 import controlador.ControladorAlmacen;
+import controlador.controlador_menup;
 import vista.Almacen;
-import vista.Menu;
-import vista.MenuPrincipal;
 import vista.Principal;
+import vista.menu_Platos;
 
 /**
  *
@@ -27,8 +27,9 @@ public class ModeloPrincipal {
         
     }
     public void Menu(){
-         Menu ppal= new Menu();
-        ppal.setVisible(true);
+         menu_Platos ppal= new menu_Platos();
+        controlador_menup ctlr_menup= new controlador_menup(ppal);
+        ctlr_menup.iniciar();
     Object o[]=null;
     }
 }

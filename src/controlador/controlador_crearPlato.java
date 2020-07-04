@@ -6,19 +6,16 @@
 package controlador;
 
 
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import modelo.MinHeap;
 import modelo.Producto;
-import vista.crearPlato;
 import modelo.modelo_crearPlato;
 import vista.Login;
-import vista.Menu;
-import static vista.Menu.contenedor;
-import vista.MenuPrincipal;
+import vista.crear_plato;
+import vista.menu_Platos;
 
 /**
  *
@@ -26,12 +23,12 @@ import vista.MenuPrincipal;
  */
 public class controlador_crearPlato implements ActionListener{
     
-    crearPlato view;
+    crear_plato view;
     modelo_crearPlato modelo=new modelo_crearPlato(view);
     
     
     
-    public controlador_crearPlato(modelo_crearPlato modelo,crearPlato view){
+    public controlador_crearPlato(modelo_crearPlato modelo,crear_plato view){
         this.modelo=modelo;
         this.view=view;
         this.view.btnCrear.addActionListener(this);
@@ -41,15 +38,10 @@ public class controlador_crearPlato implements ActionListener{
 
     
     public void iniciar(){
-      modelo.IngredientesCB(Login.bodega);
-      
-      view.setSize(750,500);
-      view.setLocation(50, 0);
-    //725,498
-      Menu.contenedor.removeAll();
-      Menu.contenedor.add(view,BorderLayout.CENTER);
-      Menu.contenedor.revalidate();
-      Menu.contenedor.repaint();
+        view.setTitle("Crearplato");
+        view.setLocationRelativeTo(null);
+        modelo.IngredientesCB(Login.bodega);
+        view.setVisible(true);
     }
     
     
@@ -97,15 +89,15 @@ public class controlador_crearPlato implements ActionListener{
             modelo.setI10(Buscar(view.Ingrediente10.getSelectedItem().toString(), Login.bodega));
 
             modelo.setC1(getValue(view.Cantidad1));
-            modelo.setC2(getValue(view.Cantidad1));
-            modelo.setC3(getValue(view.Cantidad1));
-            modelo.setC4(getValue(view.Cantidad1));
-            modelo.setC5(getValue(view.Cantidad1));
-            modelo.setC6(getValue(view.Cantidad1));
-            modelo.setC7(getValue(view.Cantidad1));
-            modelo.setC8(getValue(view.Cantidad1));
-            modelo.setC9(getValue(view.Cantidad1));
-            modelo.setC10(getValue(view.Cantidad1));
+            modelo.setC2(getValue(view.Cantidad2));
+            modelo.setC3(getValue(view.Cantidad3));
+            modelo.setC4(getValue(view.Cantidad4));
+            modelo.setC5(getValue(view.Cantidad5));
+            modelo.setC6(getValue(view.Cantidad6));
+            modelo.setC7(getValue(view.Cantidad7));
+            modelo.setC8(getValue(view.Cantidad8));
+            modelo.setC9(getValue(view.Cantidad9));
+            modelo.setC10(getValue(view.Cantidad10));
             
             modelo.crearplato();
 
@@ -125,9 +117,10 @@ public class controlador_crearPlato implements ActionListener{
             JOptionPane.showMessageDialog(null,"El espacio nombre se encuentra vacio");
         }
      }else if(e.getSource() == view.btnAtras){   
-        MenuPrincipal mp=new MenuPrincipal();
+        menu_Platos mp=new menu_Platos();
         controlador_menup ctlr_mp=new controlador_menup(mp);
         ctlr_mp.iniciar();
+        this.view.setVisible(false);
     }
    }
 }
