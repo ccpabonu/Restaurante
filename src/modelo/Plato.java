@@ -32,6 +32,7 @@ public class Plato {
     double cantI8;
     double cantI9;
     double cantI10;
+    double precio;
     
     public String getNombre(){
         return nombre;
@@ -201,7 +202,17 @@ public class Plato {
         this.cantI10 = cantI10;
     }
 
-    public Plato(String nombre, Producto ingrediente1, Producto ingrediente2, Producto ingrediente3, Producto ingrediente4, Producto ingrediente5, Producto ingrediente6, Producto ingrediente7, Producto ingrediente8, Producto ingrediente9, Producto ingrediente10, double cantI1, double cantI2, double cantI3, double cantI4, double cantI5, double cantI6, double cantI7, double cantI8, double cantI9, double cantI10) {
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+    
+    
+
+    public Plato(String nombre, Producto ingrediente1, Producto ingrediente2, Producto ingrediente3, Producto ingrediente4, Producto ingrediente5, Producto ingrediente6, Producto ingrediente7, Producto ingrediente8, Producto ingrediente9, Producto ingrediente10, double cantI1, double cantI2, double cantI3, double cantI4, double cantI5, double cantI6, double cantI7, double cantI8, double cantI9, double cantI10, double precio) {
         this.nombre = nombre;
         this.ingrediente1 = ingrediente1;
         this.ingrediente2 = ingrediente2;
@@ -223,6 +234,7 @@ public class Plato {
         this.cantI8 = cantI8;
         this.cantI9 = cantI9;
         this.cantI10 = cantI10;
+        this.precio=precio;
     }
 
     public Plato(String nombre) {

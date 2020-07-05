@@ -10,7 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import modelo.ArrayLinearList;
 import modelo.MinHeap;
+import modelo.Plato;
 import modelo.Producto;
 import modelo.modelo_crearPlato;
 import vista.Login;
@@ -59,6 +61,16 @@ public class controlador_crearPlato implements ActionListener{
      }  
     return null;
 }
+    public boolean Buscar_n(String name,ArrayLinearList <Plato> platos){
+        boolean flag=false;
+        for(int i=0; i<platos.size();i++){
+            if(name.equals(platos.get(i).getNombre())){
+                flag=true;
+                break;
+            }
+        }
+        return flag;
+    }
     
     public double getValue(JTextField cantidad){//obtener valor de un jtext y volverlo double
     double x;
@@ -73,10 +85,11 @@ public class controlador_crearPlato implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-       
+        boolean flag_rep;
         if(e.getSource() == view.btnCrear){
             modelo.setName(view.Nombre.getText());
-            if (!modelo.getName().isEmpty()){
+            flag_rep=Buscar_n(modelo.getName(),Login.menu);
+            if (!modelo.getName().isEmpty() && flag_rep==false){
             modelo.setI1(Buscar(view.Ingrediente1.getSelectedItem().toString(),Login.bodega));
             modelo.setI2(Buscar(view.Ingrediente2.getSelectedItem().toString(), Login.bodega));
             modelo.setI3(Buscar(view.Ingrediente3.getSelectedItem().toString(), Login.bodega));
@@ -114,7 +127,7 @@ public class controlador_crearPlato implements ActionListener{
             view.Cantidad10.setText("nulo");
 
         }else{
-            JOptionPane.showMessageDialog(null,"El espacio nombre se encuentra vacio");
+            JOptionPane.showMessageDialog(null,"El espacio nombre se encuentra vacio o el nombre del plato ya existe");
         }
      }else if(e.getSource() == view.btnAtras){   
         menu_Platos mp=new menu_Platos();

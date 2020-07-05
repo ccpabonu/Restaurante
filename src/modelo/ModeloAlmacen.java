@@ -46,12 +46,26 @@ public class ModeloAlmacen {
     public String getPrecio() {
         return precio;
     }
+    
+    public boolean Buscar_n(String nombre, MinHeap <Producto> ingredientes){
+        boolean flag=false;
+        for(int i=1; i<=ingredientes.size();i++){
+            if(nombre.equals(ingredientes.getNode(i).getNombre())){
+                flag=true;
+                break;
+            }
+        }
+        return flag;
+    }
+    
 
     public void setPrecio(String precio) {
         this.precio = precio;
     }
     public void guardar(){
-    if(!nombre.isEmpty())    {
+    boolean flag_rep;
+    flag_rep=Buscar_n(nombre,bodega);
+    if(!nombre.isEmpty() && flag_rep==false){
             if(!cantidad.isEmpty()){
                 if(!precio.isEmpty()){
                 Producto pro=new Producto(nombre,Integer.parseInt(cantidad),Double.parseDouble(precio));
@@ -65,7 +79,7 @@ public class ModeloAlmacen {
                   JOptionPane.showMessageDialog(null,"El campo Cantidad esta vacio");
             }         
     }else{
-             JOptionPane.showMessageDialog(null,"El campo Nombre esta vacio");
+             JOptionPane.showMessageDialog(null,"El campo Nombre esta vacio o el nombre ya existe");
         }
     try {
         GuardarInventario(bodega);

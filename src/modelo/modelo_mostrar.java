@@ -28,7 +28,7 @@ public class modelo_mostrar {
         try{
             ver=(new DefaultTableModel(
             null, new String[]{
-               "Numero","Nombre"}) {});
+               "Numero","Nombre","Precio"}) {});
             this.view.jTable1.setModel(ver);
         
         }catch(Exception e){
@@ -47,6 +47,7 @@ public class modelo_mostrar {
                ver.addRow(o);
                ver.setValueAt(Integer.toString(i+1), i, 0);
                ver.setValueAt(plato.getNombre(), i, 1);
+               ver.setValueAt(plato.getPrecio(), i, 2);
 
         }
        }

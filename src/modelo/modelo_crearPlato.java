@@ -19,8 +19,8 @@ public class modelo_crearPlato {
     crear_plato view;
     String name=null;
     Producto I1, I2, I3, I4, I5, I6, I7, I8, I9, I10=null;
-    double  C1, C2, C3, C4, C5, C6, C7, C8, C9, C10=0;
-
+    double  C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, precio=0;
+    
     
     
     public modelo_crearPlato(crear_plato view){
@@ -202,9 +202,32 @@ public class modelo_crearPlato {
     public void setC10(double C10) {
         this.C10 = C10;
     }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
     
  
-    
+       public double calcular_pr(){
+           double p_venta=0;
+           Producto [] prods={this.I1,this.I2,this.I3,this.I4,this.I5,this.I6,this.I7,this.I8,this.I9,this.I10};
+           double [] cant={this.C1,this.C2,this.C3,this.C4,this.C5,this.C6,this.C7,this.C8,this.C9,this.C10};
+           for(int i=0;i<10;i++){
+               if(prods[i] == null){
+                   p_venta=p_venta+0;
+               }else{
+                   p_venta=p_venta+(prods[i].getCosto()*cant[i]);
+               }
+               
+           }
+       return p_venta;
+       }
+       
+       
        public void IngredientesCB( MinHeap <Producto> ingredientes){//llenar Combo box con datos de un minheap
         view.Ingrediente1.addItem("Nulo");
         view.Ingrediente2.addItem("Nulo");
@@ -231,9 +254,9 @@ public class modelo_crearPlato {
     } 
 
     public void crearplato(){
-    
+        this.precio=calcular_pr();
         Plato nuevo=new Plato(this.name,this.I1,this.I2,this.I3,this.I4,this.I5,this.I6,this.I7,this.I8,this.I9,this.I10,
-                this.C1,this.C2,this.C3,this.C4,this.C5,this.C6,this.C7,this.C8,this.C9,this.C10);
+                this.C1,this.C2,this.C3,this.C4,this.C5,this.C6,this.C7,this.C8,this.C9,this.C10,this.precio);
         menu.add(nuevo);
         JOptionPane.showMessageDialog(null, "Plato creado con exito");
     
