@@ -10,10 +10,12 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import modelo.HashMap;
 import modelo.IOdoc2;
 import modelo.LinkedQueue;
 import modelo.Usuario;
 import vista.CrearUsers;
+import vista.Login;
 
 /**
  *
@@ -21,9 +23,9 @@ import vista.CrearUsers;
  */
 public class ControladorCrear implements ActionListener {
     private CrearUsers log=new CrearUsers();
-    private LinkedQueue l=new LinkedQueue();
+    public HashMap l=new HashMap();
 
-    public ControladorCrear(CrearUsers log, LinkedQueue <Usuario> k) {
+    public ControladorCrear(CrearUsers log, HashMap<String,Usuario> k) {
         this.log=log;
         this.l=k;
         this.log.jButtonLogin2.addActionListener(this);
@@ -48,13 +50,18 @@ public class ControladorCrear implements ActionListener {
             c = log.jTextFieldUser2.getText();
             if(a.equalsIgnoreCase(b)){
                 u2=new Usuario(c,a);
-                l.enQueue(u2);
-                try {
+                l.add(c,u2);
+                System.out.println(this.l.tabla[8].value);
+                /*try {
                     doc.GuardarUsuarios(l);
                 } catch (IOException ex) {
                     Logger.getLogger(ControladorCrear.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                }*/
                 this.log.setVisible(false);
+                Login log= new Login();                
+                ControladorLogin h=new ControladorLogin(log,this.l);
+                h.iniciar();
+                
                 
             }else log.jDialog1.setVisible(true);
                 

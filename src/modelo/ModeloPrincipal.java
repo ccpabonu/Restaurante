@@ -16,6 +16,7 @@ import vista.Principal;
 import vista.Venta;
 import vista.menu_Platos;
 
+
 /**
  *
  * @author Brayan Estupiñan
@@ -44,9 +45,10 @@ public class ModeloPrincipal {
         ctlr_v.iniciar();
     
     }
-    public void Atras(){
+    public void Atras(){        
         Login log=new Login();
-        ControladorLogin l = new ControladorLogin(log);
+        HashMap k=new HashMap();
+        ControladorLogin l = new ControladorLogin(log,k);
         l.iniciar();
 
     }

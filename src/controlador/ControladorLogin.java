@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import modelo.HashMap;
+import modelo.HashNode;
 import static modelo.IOdoc.CargarInventario;
 import modelo.IOdoc2;
 import modelo.LinkedQueue;
@@ -27,10 +29,11 @@ import vista.Principal;
 public class ControladorLogin implements ActionListener {
 
     private Login log=new Login();
-    private LinkedQueue l=new LinkedQueue();
+    private HashMap<String,Usuario> l =new HashMap() ;
 
-    public ControladorLogin(Login log) {
-        this.log = log;        
+    public ControladorLogin(Login log,HashMap p) {
+        this.log = log;
+        this.l=p;
         this.log.jButtonLogin.addActionListener(this);
         this.log.jButtonSalir.addActionListener(this);
         this.log.jButtonCrear.addActionListener(this);
@@ -46,14 +49,15 @@ public class ControladorLogin implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        IOdoc2 doc = new IOdoc2();
+        /*IOdoc2 doc = new IOdoc2();
         try {
             l=doc.CargarUsuarios();
         } catch (IOException ex) {
             Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ControladorLogin.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
+        
 
         if (ae.getSource() ==log.jButtonLogin ) {
             String a, b;
@@ -63,14 +67,20 @@ public class ControladorLogin implements ActionListener {
             a = log.jTextFieldUser.getText();
             char[] arrayC = log.jPasswordField1.getPassword();
             b = new String(arrayC);            
-            //System.out.println(a);
-            //System.out.println(b);
+            System.out.println(a);
+            System.out.println(b);
             Usuario us1;
+            Object us2;
             //a="cpu";
             //b="123";
+            System.out.println("acaaa "+this.l.tabla[8].value.getCuenta());
+            System.out.println(l.get("cpu"));
             us1 = new Usuario(a, b);
-            
-            if (l.buscar(us1)) {                 
+            HashNode j=new HashNode();
+            if (l.get(a)!=null) j=l.get(a);            
+            us2=j.value;
+            //System.out.println(us2.getCuenta());
+            if (us1.equal((Usuario) us2)) {                 
                 men.iniciar();
                 log.setVisible(false);
             } else {
