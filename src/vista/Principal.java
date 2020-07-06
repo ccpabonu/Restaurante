@@ -47,6 +47,7 @@ public class Principal extends javax.swing.JFrame {
         btnBodega = new javax.swing.JButton();
         btnMenu = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
+        btnVenta = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,7 +72,7 @@ public class Principal extends javax.swing.JFrame {
                 btnBodegaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBodega, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 200, 50));
+        getContentPane().add(btnBodega, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 200, 50));
 
         btnMenu.setBackground(new java.awt.Color(255, 153, 153));
         btnMenu.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
@@ -81,7 +82,7 @@ public class Principal extends javax.swing.JFrame {
                 btnMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 200, 50));
+        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 200, 50));
 
         jButtonSalir.setBackground(new java.awt.Color(255, 153, 153));
         jButtonSalir.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -92,6 +93,16 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 110, 40));
+
+        btnVenta.setBackground(new java.awt.Color(255, 153, 153));
+        btnVenta.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
+        btnVenta.setText("Venta");
+        btnVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 200, 50));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 450));
@@ -114,11 +125,16 @@ public class Principal extends javax.swing.JFrame {
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
       
     }//GEN-LAST:event_btnMenuActionPerformed
+
+    private void btnVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVentaActionPerformed
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBodega;
     public javax.swing.JButton btnMenu;
+    public javax.swing.JButton btnVenta;
     public javax.swing.JButton jButtonAtras;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelFondo;

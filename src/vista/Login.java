@@ -10,6 +10,7 @@ import modelo.ArrayLinearList;
 import modelo.MinHeap;
 import modelo.Producto;
 import modelo.Plato;
+import modelo.V_diaria;
 
 
 
@@ -21,6 +22,8 @@ public class Login extends javax.swing.JFrame {
     
     public static MinHeap <Producto> bodega = new MinHeap <>( );
     public static ArrayLinearList <Plato> menu = new ArrayLinearList <>( );
+    public static ArrayLinearList <V_diaria> venta = new ArrayLinearList <>( );
+    
     /**
      * Creates new form mainWindow
      */

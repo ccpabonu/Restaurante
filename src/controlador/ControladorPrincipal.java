@@ -30,6 +30,7 @@ public class ControladorPrincipal implements ActionListener {
     public ControladorPrincipal(Principal p, ModeloPrincipal mp) {
         this.p = p;
         this.mp = mp;
+        this.p.btnVenta.addActionListener(this);
         this.p.btnBodega.addActionListener(this);
         this.p.btnMenu.addActionListener(this);
 
@@ -49,6 +50,9 @@ public class ControladorPrincipal implements ActionListener {
         }
         if (a.getSource() == p.btnMenu) {
             mp.Menu();
+        }
+        if (a.getSource() == p.btnVenta) {
+            mp.Venta();
         }
         if (a.getSource() == p.jButtonAtras) {
 

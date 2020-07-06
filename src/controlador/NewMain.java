@@ -19,7 +19,10 @@ import vista.Login;
 public class NewMain {
 
     /**
-     * @param args the command line arguments
+     * @param args  
+     * @throws java.io.IOException
+     * @throws java.io.FileNotFoundException
+     * @throws java.lang.ClassNotFoundException
      */
     public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
         Login log = new Login();

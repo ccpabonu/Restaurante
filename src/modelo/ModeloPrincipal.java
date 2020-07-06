@@ -6,9 +6,11 @@
 package modelo;
 
 import controlador.ControladorAlmacen;
+import controlador.Controlador_Ventas;
 import controlador.controlador_menup;
 import vista.Almacen;
 import vista.Principal;
+import vista.Venta;
 import vista.menu_Platos;
 
 /**
@@ -30,6 +32,13 @@ public class ModeloPrincipal {
          menu_Platos ppal= new menu_Platos();
         controlador_menup ctlr_menup= new controlador_menup(ppal);
         ctlr_menup.iniciar();
-    Object o[]=null;
+        Object o[]=null;
+    }
+    public void Venta(){
+        Venta venta=new Venta();
+        Modelo_ventas mod=new Modelo_ventas(venta);
+        Controlador_Ventas ctlr_v=new Controlador_Ventas(venta,mod);
+        ctlr_v.iniciar();
+    
     }
 }
