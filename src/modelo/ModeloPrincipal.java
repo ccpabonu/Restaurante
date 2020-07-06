@@ -6,9 +6,12 @@
 package modelo;
 
 import controlador.ControladorAlmacen;
+import controlador.ControladorLogin;
+import controlador.ControladorPrincipal;
 import controlador.Controlador_Ventas;
 import controlador.controlador_menup;
 import vista.Almacen;
+import vista.Login;
 import vista.Principal;
 import vista.Venta;
 import vista.menu_Platos;
@@ -41,4 +44,11 @@ public class ModeloPrincipal {
         ctlr_v.iniciar();
     
     }
+    public void Atras(){
+        Login log=new Login();
+        ControladorLogin l = new ControladorLogin(log);
+        l.iniciar();
+
+    }
+    
 }

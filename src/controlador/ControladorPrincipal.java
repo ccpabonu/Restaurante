@@ -47,20 +47,19 @@ public class ControladorPrincipal implements ActionListener {
         IOdoc2 doc = new IOdoc2();
         if (a.getSource() == p.btnBodega) {
             mp.Almacen();
+            p.setVisible(false);
         }
         if (a.getSource() == p.btnMenu) {
             mp.Menu();
+            p.setVisible(false);
         }
         if (a.getSource() == p.btnVenta) {
             mp.Venta();
+            p.setVisible(false);
         }
         if (a.getSource() == p.jButtonAtras) {
-
-            Login log = new Login();
-
-            ControladorLogin crt = new ControladorLogin(log);
-            crt.iniciar();
-
+            mp.Atras();
+            p.setVisible(false);
         }
 
     }

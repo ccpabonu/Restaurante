@@ -32,6 +32,7 @@ public class menu_Platos extends javax.swing.JFrame {
         mostrar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButtonSalir2 = new javax.swing.JButton();
+        Atras = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,6 +68,15 @@ public class menu_Platos extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 100, 30));
 
+        Atras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        Atras.setText("Atras");
+        Atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 450));
 
@@ -92,9 +102,14 @@ public class menu_Platos extends javax.swing.JFrame {
  System.exit(0);             // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSalir2ActionPerformed
 
+    private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AtrasActionPerformed
+
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Atras;
     public javax.swing.JButton crearPlato;
     public javax.swing.JButton jButtonSalir2;
     private javax.swing.JLabel jLabel2;
