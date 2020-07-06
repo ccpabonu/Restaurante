@@ -12,9 +12,11 @@ package modelo;
  */
  ;
 
+import controlador.ControladorPrincipal;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
+import vista.Principal;
 import vista.Venta;
 import static vista.Venta.venta;
 import static vista.crear_plato.menu;
@@ -115,4 +117,13 @@ public class Modelo_ventas {
         view.T_vendido.setText(" ");
         JOptionPane.showMessageDialog(null,"Dia cerrado");
     }   
+    
+    public void Atras(){
+        Principal p=new Principal();
+        ModeloPrincipal mp = new ModeloPrincipal();
+        ControladorPrincipal men = new ControladorPrincipal(p,mp);
+        men.iniciar();
+        view.setVisible(false);
+    
+    }
 }

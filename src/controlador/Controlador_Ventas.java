@@ -27,6 +27,7 @@ public class Controlador_Ventas implements ActionListener {
         this.view.add.addActionListener(this);
         this.view.pagar.addActionListener(this);
         this.view.cerrar.addActionListener(this);
+        this.view.Atras.addActionListener(this);
     }
         
     public void iniciar(){
@@ -50,6 +51,8 @@ public class Controlador_Ventas implements ActionListener {
             modelo.pagar();
         }else if(e.getSource()==view.cerrar){
             modelo.cerrar();
+        }else if(e.getSource()==view.Atras){
+            modelo.Atras();
         }
             
     }

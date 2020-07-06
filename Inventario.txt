@@ -1,3 +1,5 @@
-carne,20,15.0
-pollo,25,20.0
-pan,115,20.0
+arroz,30,15.0
+pollo,60,20.0
+pan,98,15.0
+carne,70,30.0
+pescado,95,17.0
