@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/modelo/modelo_mostrar.java</file>
-            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/controlador/controlador_crearPlato.java</file>
-            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/modelo/Plato.java</file>
-            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/modelo/modelo_crearPlato.java</file>
-            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/vista/crear_plato.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/modelo/ModeloAlmacen.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/controlador/ControladorAlmacen.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/vista/Login.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Sebas_U/IV/EstructuraD/Git_project/Restaurante/src/controlador/NewMain.java</file>
         </group>
     </open-files>
 </project-private>

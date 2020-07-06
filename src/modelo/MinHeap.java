@@ -94,21 +94,7 @@ public class MinHeap <T extends  Comparable<? super T>> implements MinPriorityQu
         
         return minElement;
     }
-    public void set(T theObject, int index){
-        
-        int currentNode=index;
-        if(currentNode !=1 && heap[currentNode/2].compareTo(theObject) >0){
-            while(currentNode !=1 && heap[currentNode/2].compareTo(theObject) >0){
-                heap[currentNode]=heap[currentNode/2];
-                currentNode /=2;
-            }
-            heap[currentNode]=theObject;
-        }else if(currentNode*2< size && heap[currentNode*2].compareTo(theObject)>0 && heap[(currentNode*2)+1].compareTo(theObject)>0){
-            heap[index]=theObject;
-        }else{
-           undo(theObject,index);
-        }
-    }
+    
     
     public void undo(T theObject, int index){
         if(index<size-1){
@@ -123,8 +109,24 @@ public class MinHeap <T extends  Comparable<? super T>> implements MinPriorityQu
         undo(theObject,child); 
         }
 }
+    public void set(T theObject, int index){
         
-    public void remove(int index){//verificar, porque esta dando mal el ordenamiento, revisar paint
+        int currentNode=index;
+        if(currentNode !=1 && heap[currentNode/2].compareTo(theObject)>0){
+            while(currentNode !=1 && heap[currentNode/2].compareTo(theObject)>0){
+                heap[currentNode]=heap[currentNode/2];
+                currentNode /=2;
+            }
+            heap[currentNode]=theObject;
+        }else if((currentNode*2) < size && heap[currentNode*2].compareTo(theObject)>0 && heap[(currentNode*2)+1].compareTo(theObject)>0
+                 ||(currentNode*2)==size && heap[currentNode*2].compareTo(theObject)>0 ){
+            heap[index]=theObject;
+        }else{
+           undo(theObject,index);
+        }
+    }
+        
+    public void remove(int index){
         
         T lastElement = heap[ size-- ];
          

@@ -58,7 +58,7 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jButtonCrear = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jDialog1.setLocation(new java.awt.Point(0, 0));
         jDialog1.setSize(new java.awt.Dimension(300, 100));
@@ -87,10 +87,10 @@ public class Login extends javax.swing.JFrame {
                 jButtonSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 100, 30));
+        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 100, 30));
 
         jButtonLogin.setBackground(new java.awt.Color(255, 153, 153));
-        jButtonLogin.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButtonLogin.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jButtonLogin.setText("Login");
         jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,23 +102,23 @@ public class Login extends javax.swing.JFrame {
                 jButtonLoginKeyPressed(evt);
             }
         });
-        getContentPane().add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 100, 30));
+        getContentPane().add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 110, 60));
 
         jLabelUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/User.png"))); // NOI18N
         jLabelUser.setText("jLabel1");
-        getContentPane().add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 240, 270));
+        getContentPane().add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 240, 270));
 
         jLabel1.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Contraseña :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuario :");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
 
         jTextFieldUser.setBackground(new java.awt.Color(0, 0, 0));
         jTextFieldUser.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -128,7 +128,7 @@ public class Login extends javax.swing.JFrame {
                 jTextFieldUserActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 130, -1));
+        getContentPane().add(jTextFieldUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 130, -1));
 
         jPasswordField1.setBackground(new java.awt.Color(0, 0, 0));
         jPasswordField1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -138,25 +138,25 @@ public class Login extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 130, -1));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 130, -1));
 
         jButtonCrear.setBackground(new java.awt.Color(255, 153, 153));
-        jButtonCrear.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButtonCrear.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jButtonCrear.setText("Crear Usuario");
         jButtonCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCrearActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 190, -1));
+        getContentPane().add(jButtonCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 190, 60));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("RESTAURANTE EL BACAN ");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 1, 720, 340));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -197,8 +197,8 @@ public class Login extends javax.swing.JFrame {
     public javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelFondo;

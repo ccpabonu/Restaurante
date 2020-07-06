@@ -5,13 +5,8 @@
  */
 package vista;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.Producto;
 //import modelo.ArrayLinearList;
-import javax.swing.JOptionPane;
-import static modelo.IOdoc.GuardarInventario;
 import modelo.MinHeap;
 
 /**
@@ -59,9 +54,8 @@ public static int buscar;
         Mostrar = new javax.swing.JButton();
         Modificar = new javax.swing.JButton();
         Eliminar = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         jDialog1.setSize(new java.awt.Dimension(300, 100));
@@ -70,34 +64,37 @@ public static int buscar;
         jDialog1.getContentPane().add(jLabel9, java.awt.BorderLayout.PAGE_START);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Georgia", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("INVENTARIO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+        jLabel2.setText("Nombre:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 255, 204));
-        jLabel3.setText("Cantidad");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        jLabel3.setText("Cantidad:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 255, 204));
-        jLabel4.setText("Precio por unidad");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
+        jLabel4.setText("Precio por unidad:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
 
+        Guardar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         Guardar.setText("Guardar");
         Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, -1, -1));
+        getContentPane().add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 100, -1));
 
         txNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,57 +106,63 @@ public static int buscar;
                 txNombreKeyTyped(evt);
             }
         });
-        getContentPane().add(txNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 150, -1));
-        getContentPane().add(txCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 150, -1));
+        getContentPane().add(txNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 150, -1));
+        getContentPane().add(txCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 150, -1));
 
         txPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txPrecioActionPerformed(evt);
             }
         });
-        getContentPane().add(txPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 150, -1));
+        getContentPane().add(txPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 150, -1));
 
+        Mostrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         Mostrar.setText("Mostrar");
         Mostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MostrarActionPerformed(evt);
             }
         });
-        getContentPane().add(Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 89, -1));
+        getContentPane().add(Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 110, -1));
 
+        Modificar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         Modificar.setText("Modificar");
         Modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModificarActionPerformed(evt);
             }
         });
-        getContentPane().add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
+        getContentPane().add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
 
+        Eliminar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         Eliminar.setText("Eliminar ");
         Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
+        getContentPane().add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 110, -1));
 
-        jLabel7.setText("gr");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, -1, -1));
-
-        jLabel8.setText("Pesos");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, -1, -1));
-
-        btnAtras.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAtras.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btnAtras.setText("Volver ");
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 100, 40));
+        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, 40));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inventario-de-perdida.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -10, 540, 370));
+        jButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, 110, 50));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -226,6 +229,11 @@ public static int buscar;
         this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public void tamañoArreglo(){
    
     int a;
@@ -239,14 +247,13 @@ public static int buscar;
     public javax.swing.JButton Modificar;
     public javax.swing.JButton Mostrar;
     public javax.swing.JButton btnAtras;
+    private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JTextField txCantidad;
     public javax.swing.JTextField txNombre;

@@ -28,48 +28,47 @@ public class menu_Platos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         crearPlato = new javax.swing.JButton();
         mostrar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jButtonSalir2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("PLATOS");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        crearPlato.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        crearPlato.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         crearPlato.setText("CREAR PLATO");
+        jPanel1.add(crearPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 284, 35));
 
-        mostrar.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        mostrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         mostrar.setText("VER");
+        mostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 284, 35));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(175, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(262, 262, 262))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(mostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(crearPlato, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))
-                        .addGap(166, 166, 166))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jLabel1)
-                .addGap(88, 88, 88)
-                .addComponent(mostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addComponent(crearPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(126, Short.MAX_VALUE))
-        );
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("MENU");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, -1));
+
+        jButtonSalir2.setBackground(new java.awt.Color(255, 153, 153));
+        jButtonSalir2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButtonSalir2.setText("Salir");
+        jButtonSalir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalir2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 100, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,11 +84,21 @@ public class menu_Platos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mostrarActionPerformed
+
+    private void jButtonSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalir2ActionPerformed
+ System.exit(0);             // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalir2ActionPerformed
+
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton crearPlato;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton jButtonSalir2;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JButton mostrar;
     // End of variables declaration//GEN-END:variables

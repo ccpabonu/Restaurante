@@ -5,18 +5,9 @@
  */
 package vista;
 import java.awt.Image;
-import java.security.SecureRandom;
-import java.math.BigInteger;
 import java.awt.Toolkit;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import static modelo.IOdoc.CargarInventario;
-import modelo.LinkedQueue;
 import modelo.MinHeap;
 import modelo.Producto;
-import modelo.Usuario;
-import modelo.ChainNode;
 
 
 
@@ -62,7 +53,7 @@ public class CrearUsers extends javax.swing.JFrame {
         jPasswordField5 = new javax.swing.JPasswordField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setText("Las contraseñas no coinciden");
         jDialog1.getContentPane().add(jLabel1, java.awt.BorderLayout.CENTER);
@@ -79,7 +70,7 @@ public class CrearUsers extends javax.swing.JFrame {
                 jButtonSalir2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 100, 30));
+        getContentPane().add(jButtonSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 100, 30));
 
         jButtonLogin2.setBackground(new java.awt.Color(255, 153, 153));
         jButtonLogin2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -94,29 +85,29 @@ public class CrearUsers extends javax.swing.JFrame {
                 jButtonLogin2KeyPressed(evt);
             }
         });
-        getContentPane().add(jButtonLogin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 100, 30));
+        getContentPane().add(jButtonLogin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 100, 30));
 
         jLabel13.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Contraseña :");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
 
         jLabel14.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Usuario :");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
 
         jTextFieldUser2.setBackground(new java.awt.Color(0, 0, 0));
-        jTextFieldUser2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextFieldUser2.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jTextFieldUser2.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldUser2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldUser2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 130, -1));
+        getContentPane().add(jTextFieldUser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 130, 30));
 
         jPasswordField4.setBackground(new java.awt.Color(0, 0, 0));
         jPasswordField4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -126,7 +117,7 @@ public class CrearUsers extends javax.swing.JFrame {
                 jPasswordField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 130, -1));
+        getContentPane().add(jPasswordField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 130, 30));
 
         jPasswordField5.setBackground(new java.awt.Color(0, 0, 0));
         jPasswordField5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -136,27 +127,27 @@ public class CrearUsers extends javax.swing.JFrame {
                 jPasswordField5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 130, -1));
+        getContentPane().add(jPasswordField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 130, -1));
 
         jLabel15.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Repita Contraseña :");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("RESTAURANTE EL BACAN ");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 1, 720, 340));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalir2ActionPerformed
-        // TODO add your handling code here:
+ System.exit(0);             // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSalir2ActionPerformed
 
     private void jButtonLogin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogin2ActionPerformed
@@ -188,7 +179,7 @@ public class CrearUsers extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
     public javax.swing.JPasswordField jPasswordField4;
     public javax.swing.JPasswordField jPasswordField5;
     public javax.swing.JTextField jTextFieldUser2;

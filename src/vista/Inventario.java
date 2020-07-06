@@ -5,7 +5,6 @@
  */
 package vista;
 
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Producto;
 
@@ -75,14 +74,15 @@ public class Inventario extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(TablaDatos);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 447, 270));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 540, 340));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Productos en inventario");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 23, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 520, 50));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inventario-de-perdida.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 480, 400));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -80, -1, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

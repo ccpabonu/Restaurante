@@ -53,7 +53,7 @@ if(a.getSource()==a2.Guardar){
             a2.txNombre.setText("");
             a2.txCantidad.setText("");
             a2.txPrecio.setText("");
-        }if(a.getSource()==a2.Modificar){
+        }if(a.getSource()== a2.Modificar){
             m1.setNombre(a2.txNombre.getText());
             m1.setCantidad(a2.txCantidad.getText());
             m1.setPrecio(a2.txPrecio.getText());

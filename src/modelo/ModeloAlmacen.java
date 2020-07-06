@@ -47,6 +47,10 @@ public class ModeloAlmacen {
         return precio;
     }
     
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+    
     public boolean Buscar_n(String nombre, MinHeap <Producto> ingredientes){
         boolean flag=false;
         for(int i=1; i<=ingredientes.size();i++){
@@ -59,9 +63,7 @@ public class ModeloAlmacen {
     }
     
 
-    public void setPrecio(String precio) {
-        this.precio = precio;
-    }
+    
     public void guardar(){
     boolean flag_rep;
     flag_rep=Buscar_n(nombre,bodega);
@@ -119,7 +121,7 @@ public class ModeloAlmacen {
      
      public void Modificar(){
      Producto pro1=new Producto (nombre,Integer.parseInt(cantidad),Double.parseDouble(precio));
-     bodega.set(pro1,buscar);
+     bodega.set(pro1, buscar);
      JOptionPane.showMessageDialog(null,"Producto modificado con éxito");
      try {
         GuardarInventario(bodega);

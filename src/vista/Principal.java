@@ -61,27 +61,27 @@ public class Principal extends javax.swing.JFrame {
                 jButtonAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 100, 30));
+        getContentPane().add(jButtonAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 100, 40));
 
         btnBodega.setBackground(new java.awt.Color(255, 153, 153));
-        btnBodega.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnBodega.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         btnBodega.setText("Bodega");
         btnBodega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBodegaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBodega, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 150, 30));
+        getContentPane().add(btnBodega, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 200, 50));
 
         btnMenu.setBackground(new java.awt.Color(255, 153, 153));
-        btnMenu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnMenu.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         btnMenu.setText("Crear Menú");
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 160, 30));
+        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 200, 50));
 
         jButtonSalir.setBackground(new java.awt.Color(255, 153, 153));
         jButtonSalir.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -91,10 +91,10 @@ public class Principal extends javax.swing.JFrame {
                 jButtonSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 100, 30));
+        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 110, 40));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 340));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen.png"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
